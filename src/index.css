@@ -1,0 +1,68 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+span,
+a,
+strong{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 33px;
+    color: #474747;
+    letter-spacing: 1px;
+
+}
+
+body{
+    background: #F2F2F2;
+    padding: 50px 100px;
+}
+
+
+@media screen and (min-width: 1441px){
+    p{
+        font-size: 20px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px){
+    p{
+        font-size: 15px;
+        line-height: 28px;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    body{
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    body{
+        padding: 10px;
+    }
+}

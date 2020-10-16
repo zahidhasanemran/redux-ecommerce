@@ -1,0 +1,33 @@
+Rect-redux redux
+bootstrap 4
+react router
+react-icons
+axios
+react animationgroup 
+lazy loading 
+hoc 
+data from api 
+data filter 
+custom counter 
+firebase authentication 
+placeholder loading animation 
+
+
+
+load frm redux
+filter at best product 
+other slider product load from redux 
+Single Product page 
+Product count increment decrement 
+-> Add to cart functin
+-> Price calculation function 
+-> cart page
+-> checkout page
+-> login page 
+-> signup page 
+-> placehoder loading 
+-> error hoc
+-> modal hoc 
+-> Product added to the cart on product hover 
+-> single product to scroll top 
+-> from single page click on category will take same category shop page 

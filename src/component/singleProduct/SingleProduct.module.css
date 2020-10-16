@@ -1,0 +1,67 @@
+
+.sidebar_two{
+	background: transparent !important;
+    margin-top: 0 !important;
+}
+.img_box{
+	position: relative;
+}
+.hover_section{
+	position: absolute;
+	left: 0;
+	top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(.5);
+    opacity: 0;
+	visibility: hidden;
+	transition: all .3s linear;
+}
+
+.hover_two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+	background: #00000085;
+}
+
+.hover_two li a {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    background: #62a83d;
+    color: #fff;
+}
+.hover_two li p{
+	color: #fff;
+	background: #62a83d;
+	display: inline-block;
+    padding: 1px 15px;
+    font-size: 14px;
+	visibility: hidden;
+	transition: all .3s linear;
+}
+.hover_two ul li:hover p{
+	/* background: #ff4318; */
+	visibility: visible;
+}
+.hover_two li, .counter li{
+	font-weight: bold;
+}
+
+.add_to a{
+	color: #000;
+	font-weight: 500;
+}
+
+.img_box:hover .hover_section{
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1);
+}
+.hover_two svg{
+	color: #fff;
+}

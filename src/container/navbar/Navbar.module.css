@@ -1,0 +1,60 @@
+.menu_bar{
+	border-top: 1px solid  #e5e5e5;
+	border-bottom: 1px solid  #e5e5e5;
+}
+.menu_bar ul li{
+	transition: all .3s linear;
+	position: relative;
+}
+.menu_bar ul li:hover ul{
+	visibility: visible;
+	opacity: 1;
+	top: 53px;
+}
+.menu_bar ul li ul{
+	position: absolute;
+	left: 0;
+	top: 63px;
+	width: 200px;
+	z-index: 444;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .3s linear;
+}
+.menu_bar ul ul li:hover a, .veg_sub{
+	background: #f97a77;
+	color: #fff;
+}
+.menu_bar ul ul li a.active{
+	color: #62a83d;
+}
+.menu_bar ul ul li a{
+	display: block;
+	color: #fff;
+	background: #62a83d;
+}
+.menu_bar ul ul li{
+	display: block;
+}
+.menu_bar ul li a{
+	font-family: 'Roboto', sans-serif;;
+	color: #333;
+	font-size: 16px;
+	line-height: 23px;
+	padding: 15px 22px;
+}
+.menu_bar ul li:hover > a{
+	color:  #62a83d;
+}
+.veg_sub{
+	position: absolute;
+	left: -230px;
+	width: 960px;
+	background: #000;
+}
+.menu_bar ul li a.active{
+	color:  #62a83d;
+}
+.menu_bar {
+    background: #fff;
+}

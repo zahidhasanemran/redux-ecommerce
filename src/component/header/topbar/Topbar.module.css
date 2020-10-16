@@ -1,0 +1,23 @@
+.header_section{
+	padding: 25px 0px;
+}
+.header_search input{
+	padding: 7px 30px;
+    border-radius: 25px;
+}
+.header_search label i{
+	position: relative;
+	margin-left: -36px;
+}
+.cart_section ul li{
+	margin-left: 15px;
+}
+
+.header_search label svg {
+    position: relative;
+    margin-left: -36px;
+    color: #86898b;
+}
+.header_section {
+    background: #fff;
+}

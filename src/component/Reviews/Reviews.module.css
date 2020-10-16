@@ -1,0 +1,10 @@
+.stars li svg{
+	color: #FFD322!important;
+}
+.stars{
+	list-style: none;
+}
+.stars li{
+	font-size: 16px;
+	margin-right: 0!important;
+}

@@ -1,0 +1,67 @@
+.newarrival_section{
+    position: relative;
+    background: #ffffff;
+}
+
+.newArrivalSlider{
+	padding: 0px 10px;
+}
+
+.single_product{
+	background: transparent !important;
+	margin-top: 0 !important;
+	margin-bottom: 30px;
+}
+.img_box{
+	position: relative;
+}
+.single_slide{
+	padding: 0 7px;
+}
+
+
+.slick-next:hover{
+	background: #62a83d;
+	color: #fff;
+}
+.slickprev, 
+.slicknext{
+	background: #fff;
+	color: #000;
+}
+.slickprev svg, 
+.slicknext svg{
+	font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: 0px solid #333;
+	transition: all .3s linear;
+	background: #fff;
+}
+
+.slickprev:hover, 
+.slicknext:hover{
+	background: #62a83d;
+	color: #62a83d;
+	/* color: #fff; */
+}
+
+.slickprev{
+	position: absolute;
+    right: 8px;
+    top: -75px;
+	z-index: 9;
+	background: #fff;
+	border-width: 0.5px;
+}
+
+.slicknext{
+	position: absolute;
+    right: 35px;
+    top: -75px;
+	z-index: 9;
+	background: #fff;
+	border-width: 0.5px;
+}
+

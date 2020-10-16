@@ -1,0 +1,67 @@
+.footer_section p{
+    font-size: 12px;
+    line-height: inherit;
+}
+.footer_section{
+	background: #23292C;
+	padding-top: 150px;
+	padding-bottom: 50px;
+}
+.footer_section h4{
+	font-size: 16px;
+	color: #fff;
+}
+.footer_section p, svg, a, h4{
+	color: #86898b;
+}
+
+.media p {
+    font-size: 12px;
+    line-height: inherit;
+}
+.footer_right li img {
+    width: 75px;
+    height: auto;
+}
+
+.email_form input[type="submit"]{
+	background: var(--button_def_hover);
+	color: #fff;
+	margin-left: 15px;
+	padding: 9px 20px;
+	text-transform: uppercase;
+}
+.email_form input[type="email"]{
+	background: transparent;
+	outline: 0;
+	border: 1px solid #bbb;
+	padding: 8px 15px;
+	width: 70%;
+}
+.social {
+	margin-top: 10px;
+}
+.social ul li a svg{
+    font-size: 16px;
+}
+.social ul li a{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #bbb;
+	line-height: 27px;
+	text-align: center;
+	transition: all .3s linear;
+	color: #86898b;
+}
+.social ul li a:hover{
+	background: var(--button_def_hover);
+	color: #fff!important;
+}
+footer{
+	background: #191E21;
+	padding: 30px 0px;
+}
+footer p{
+	color: #ddd;
+}

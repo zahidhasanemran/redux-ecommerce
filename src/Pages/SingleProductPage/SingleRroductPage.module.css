@@ -1,0 +1,116 @@
+.SingleRroductPage{
+    margin: 50px 0px;
+}
+.SingleProductTop{
+    background: #ffffff;
+    padding: 30px 25px;
+}
+.SingleRroductImg{
+    background: #fff;
+    height: 350px;
+}
+.SingleRroductImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.ProductDetails{}
+
+.ProductDetails h4{
+    font-size: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.reviews a{
+    margin-left: 15px;
+}
+.reviews{
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.price{
+    margin-top: 12px;
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.Overview{
+    margin-top: 15px;
+}
+.Overview h5{
+    margin-bottom: 20px;
+}
+.Overview p{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.qty{
+    margin-right: 10px;
+}
+.cart_div, .qty{
+    display: flex;
+    align-items: center;
+}
+
+.qty button{
+    outline: none;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: normal;
+
+}
+.qty p{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    margin: 0px 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+
+.SingleProductBottom{
+    margin-top: 30px;
+    background: #fff;
+    padding: 30px 25px;
+}
+.SingleProductBottom h5{
+    margin-bottom: 20px;
+}
+.SingleProductBottom p{
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

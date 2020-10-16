@@ -1,0 +1,102 @@
+.sidebar_two{
+    background: #fff;
+    padding: 15px;
+	position: relative;
+	transition: all .3s linear;
+}
+.sidebar_two .img_box img{
+    transition: all .3s linear;
+
+}
+.img_box{
+	position: relative;
+}
+.sidebar_two .img_box{
+	overflow: hidden;
+}
+.sidebar_two:hover .img_box img{
+	transform: scale(1.2);
+}
+
+.hover_section{
+	position: absolute;
+	left: 15px;
+	top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.hot{
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 14px;
+	color: #fff;
+	background: #ff4318;
+}
+.hover_one{
+	margin-top: 30px;
+}
+.hover_one .hot{
+	position: relative;
+	/* margin-left: -8px; */
+	display: inline-block;
+	width: 50px;
+    /* transform: translateY(-35px); */
+    text-align: center;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+.counter li{
+    width: 60px;
+    padding: 5px 0px;
+    color: #333;
+    background: #fff;
+}
+.counter li p{
+	font-size: 10px;
+}
+.counter li:first-child{background: #f97a77; color: #fff;}
+.counter p{
+	text-transform: capitalize;
+}
+.hover_two li, .counter li{
+	font-weight: bold;
+}
+
+.hover_two {visibility: hidden;opacity: 0;transition: all .3s linear;}
+
+.sidebar_two:hover .hover_two{
+	visibility: visible;
+	opacity: 1;
+}
+.sidebar_two:hover .hover_two a i{
+	color: #fff;
+}
+.sidebar_two:hover .addtocart{
+	background: #f97a77;
+}
+.hover_two li a {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    background:  #62a83d;
+    color: #fff;
+}
+.hover_two li p{
+	color: #fff;
+	background:  #62a83d;
+	display: inline-block;
+	padding: 1px 15px;
+	font-size: 14px;
+	visibility: hidden;
+	transition: all .3s linear;
+}
+.hover_two li, .counter li{
+	font-weight: bold;
+}
+.hover_two li:hover p{
+	visibility: visible;
+}

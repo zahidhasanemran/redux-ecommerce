@@ -1,0 +1,65 @@
+:root{
+	--head_font: 'Roboto', sans-serif;
+	--second_font: 'Montserrat', sans-serif;
+	--input_bg: #F2F2F2;
+	--hover_color: #62a83d;
+	--primary_text: #333;
+	--linear_anim: all .3s linear;
+	--border_color: #e5e5e5;
+	--button_def_color: #f97a77;
+	--button_def_hover: #62a83d;
+}
+
+
+.Montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+.Roboto{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* Base CSS */
+*, p{
+	margin: 0;
+	padding: 0;
+}
+a:hover{
+	text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+input{
+	border: none;
+	outline: 0;
+	background: var(--input_bg);
+}
+.bg{
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+ul{
+	margin: 0!important;
+	padding: 0!important;
+}
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	background: #F8F8F8;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+    border: none;
+    outline: 0;
+    background: #F2F2F2;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,ul,li,span{
+	margin: 0;
+}
