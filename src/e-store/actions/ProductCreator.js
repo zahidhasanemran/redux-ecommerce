@@ -1,12 +1,16 @@
 import Axios from 'axios';
 import * as actions from './actionConst';
 
+
+
+
 export const SaveProducts  = (products) => {
     return {
         type: actions.SAVE_PRODUCT,
         products: products
     }
 }
+
 export const ProductCountLoad  = () => {
     return {
         type: actions.PRODUCT_COUNT_LOAD
@@ -81,15 +85,11 @@ export const getDetailsProduct = (products, id) => {
 
 
 export const ProductRequested = () => {
-    // alert("porduct laod start")
+    
     return dispatch => {
         Axios.get('http://localhost:5000/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))
-            dispatch(BestProductFilter(res.data))
-            dispatch(FeaturedProductFilter(res.data))
-            dispatch(NewProductFilter(res.data))
-            dispatch(SaveProductCategory(res.data))
         })
         .catch(error => {
             dispatch(FailedProducts(error))
@@ -110,50 +110,54 @@ export const allProducts = () => {
     }
 }
 
-export const ShopProductRequested = () => {
+// export const ShopProductRequested = () => {
     
-    return dispatch => {
-        Axios.get('http://localhost:5000/api/products')
-        .then(res => {
-            dispatch(SaveProducts(res.data))
-            dispatch(SaveProductCategory(res.data))
-            dispatch(FilterProduct(res.data))
-        })
-        .catch(error => {
-            dispatch(FailedProducts(error))
-        })
-    }
-}
+//     return dispatch => {
+//         Axios.get('http://localhost:5000/api/products')
+//         .then(res => {
+//             dispatch(SaveProducts(res.data))
+//         })
+//         .catch(error => {
+//             dispatch(FailedProducts(error))
+//         })
+//     }
+// }
+
+// export const SingleProductRequested = (id) => {
+    
+//     return dispatch => {
+//         Axios.get('http://localhost:5000/api/products/')
+//         .then(res => {
+//             dispatch(getDetailsProduct(res.data, id))
+//             dispatch(SaveProducts(res.data))
+//         })
+//         .catch(error => {
+//             dispatch(FailedProducts(error))
+//         })
+//     }
+// }
+
+
 
 export const SingleProductRequested = (id) => {
-    
-    return dispatch => {
-        Axios.get('http://localhost:5000/api/products/')
-        .then(res => {
-            dispatch(getDetailsProduct(res.data, id))
-            dispatch(SaveProducts(res.data))
-        })
-        .catch(error => {
-            dispatch(FailedProducts(error))
-        })
+    return {
+        type: actions.PRODUCT_COUNT_INCREMENT,
+        id: id,
     }
 }
-
 
 
 export const productCountIncrement = (id) => {
     return {
         type: actions.PRODUCT_COUNT_INCREMENT,
-        id: id,
-        // products: products
+        id: id
     }
 }
 
-export const productCountDecrement = ( id) => {
+export const productCountDecrement = (id) => {
     return {
         type: actions.PRODUCT_COUNT_DECREMENT,
-        id: id,
-        // products: products
+        id: id
     }
 }
 

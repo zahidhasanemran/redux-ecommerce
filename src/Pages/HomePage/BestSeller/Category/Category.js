@@ -9,6 +9,7 @@ function Category({classes, proFilter}) {
     let dispatch = useDispatch();
     let categories = useSelector(state => state.ProductReducer.category);
 
+
     function dispatching (cat,e) {
         e.preventDefault();
         dispatch(proFilter(cat));

@@ -14,11 +14,15 @@ export {
     ProductRequested,
     BestProCatFilter,
     ShopProFilter,
-    ShopProductRequested,
+    // ShopProductRequested,
     SingleProductRequested,
     ProductCountLoad,
     FeaturedProductFilter,
     productCountIncrement,
     productCountDecrement,
-    addToCart
+    addToCart,
+    NewProductFilter,
+    SaveProductCategory,
+    FilterProduct,
+    getDetailsProduct
 } from './ProductCreator';

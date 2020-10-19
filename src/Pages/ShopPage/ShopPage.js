@@ -2,21 +2,30 @@ import React from 'react';
 import ShopProducts from './ShopProducts/ShopProducts';
 import ShopSidebar from './ShopSidebar/ShopSidebar';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { ShopProductRequested } from '../../e-store/actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { FilterProduct, SaveProductCategory } from '../../e-store/actions';
+
 
 
 
 const ShopPage = () => {
 
+    const products = useSelector(state => state.ProductReducer.products);
+    const loading = useSelector(state => state.ProductReducer.loading);
+    // console.log(products);
 
-    // const products = useSelector(state => state.ProductReducer.products);
-    
     const dispatch = useDispatch();
 
+    const chainDis = async function f() {
+        if(!loading){
+            dispatch(SaveProductCategory(products));
+            dispatch(FilterProduct(products));
+        } 
+    }
+
     useEffect(() => {
-        dispatch(ShopProductRequested());
-    }, []);
+        chainDis()
+    }, [loading]);
 
 
     return (

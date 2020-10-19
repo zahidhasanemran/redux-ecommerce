@@ -4,28 +4,37 @@ import Reviews from '../../component/Reviews/Reviews';
 import AddtoCart from '../../component/ui/button/AddtoCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { SingleProductRequested, productCountIncrement, productCountDecrement } from '../../e-store/actions';
+import { getDetailsProduct, productCountIncrement, productCountDecrement } from '../../e-store/actions';
 import { Link } from 'react-router-dom';
 
 
 
 const SingleRroductPage = (props) => {
+
     const cart = useSelector(state => state.ProductReducer.cart);
     let proId = props.match.params.id;
     let detailsProduct = useSelector(state => state.ProductReducer.detailsProd);
+    let products = useSelector(state => state.ProductReducer.products);
+    let loading = useSelector(state => state.ProductReducer.loading);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(SingleProductRequested(proId))
-    }, [cart]);
+   
+    const chainDis = async function f() {
+        if(!loading){
+            dispatch(getDetailsProduct(products, proId))
+        }
+    }
 
+    useEffect(() => {
+        chainDis()
+    }, [loading]);
     
 
     return (
         
 
             detailsProduct.map((x, index) => {
-                // console.log(cart);
+                // console.log(detailsProduct);
                 return (
                     <div className={style.SingleRroductPage} key={index}>
                     <div>

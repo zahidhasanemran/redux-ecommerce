@@ -6,23 +6,38 @@ import NewArival from './NewArival/NewArival';
 import SeasonSeller from './SeasonSeller/SeasonSeller';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ProductRequested} from '../../e-store/actions/index';
+import { BestProductFilter, FeaturedProductFilter, NewProductFilter, SaveProductCategory } from '../../e-store/actions';
+
 
 
 
 
 function HomePage() {
 
-    // const products = useSelector(state => state.ProductReducer.products);
-    // console.log(products);
+    const products = useSelector(state => state.ProductReducer.products);
+    const loading = useSelector(state => state.ProductReducer.loading);
+    // console.log(loading);
+
+    
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(ProductRequested());
-    }, []);
+    const chainDis = async function f() {
+        if(!loading){
+            dispatch(SaveProductCategory(products));
+            dispatch(BestProductFilter(products));
+            dispatch(NewProductFilter(products));
+            dispatch(FeaturedProductFilter(products));
+        } 
+    }
+      
+
+    useEffect(()  => {
+        chainDis();
+    }, [loading]);
 
     return (
         <Fragment>
+            {/* {loading ? <p>loading</p> : <p>done</p> } */}
                 <div className="shop_section_one pt-5">
                     <div className="container">
                         <div className="row">

@@ -5,20 +5,20 @@ import logoImg from '../../../assets/img/logo.png'
 import iconAcount from '../../../assets/img/icon-account.jpg'
 import cartImg from '../../../assets/img/cart.png'
 import { FaSearch } from "react-icons/fa";
-import {ProductCountLoad} from '../../../e-store/actions/index'
-import { useDispatch, useSelector } from 'react-redux';
+// import {ProductCountLoad} from '../../../e-store/actions/index'
+// import { useDispatch, useSelector } from 'react-redux';
 
 
 
 const Topbar = () => {
 
-    let count = useSelector(state => state.ProductReducer.count)
-    let dispatch = useDispatch();
-    // console.log(count);
+    // let count = useSelector(state => state.ProductReducer.count)
+    // let dispatch = useDispatch();
+    // // console.log(count);
 
-    useEffect(()=>{
-        dispatch(ProductCountLoad());
-    }, []);
+    // useEffect(()=>{
+    //     dispatch(ProductCountLoad());
+    // }, []);
 
     return (
         <div className={classes.header_section}>
@@ -42,7 +42,7 @@ const Topbar = () => {
                                 <li className="list-inline-item"><a href="/"><img src={iconAcount} alt="account" /></a></li>
                                 <li className="list-inline-item">
                                     <a href="/"><img src={cartImg} alt="cart" />
-                                    <small style={{position: "relative", top: '-10px', left: '-5px',color: 'green'}}> {count} </small>
+                                    <small style={{position: "relative", top: '-10px', left: '-5px',color: 'green'}}> 2 </small>
                                     </a>
                                 </li>
                             </ul>

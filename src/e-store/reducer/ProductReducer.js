@@ -94,11 +94,12 @@ const productReducer = (state = productState, action) => {
             
     
         case actionTypes.GET_DETAILS_PRODUCT:
-            let dtP = state.products.length > 0 ? state.products : action.products
+            // let dtP = state.products.length > 0 ? state.products : action.products
             return{
                 ...state,
+                ...state.products,
                 ...state.detailsProd,
-                detailsProd: dtP.filter(x => x.id == action.id)
+                detailsProd: action.products.filter(x => x.id == action.id)
             }
     
         case actionTypes.PRODUCT_COUNT_LOAD:
@@ -141,7 +142,7 @@ const productReducer = (state = productState, action) => {
             }
             // requested product to the cart 
             
-            console.log(tempCart);
+            // console.log(tempCart);
             return{
                 ...state,
                 ...state.cart,
@@ -168,13 +169,11 @@ const productReducer = (state = productState, action) => {
             
         case actionTypes.PRODUCT_COUNT_DECREMENT:
             let tempDecProduct = [];
-            // let DeCount = state.count;
             let Dex = [...state.products].map(pro => {
                 if(pro.id != action.id){
                     tempDecProduct.push(pro);
                 }else{
                     pro.qty = pro.qty <= 0 ? pro.qty = 0 : pro.qty - 1
-                    // DeCount = DeCount == 0 ? DeCount = 0 : state.count - 1
                     tempDecProduct.push(pro);
                 }
             })
@@ -183,7 +182,7 @@ const productReducer = (state = productState, action) => {
                 ...state,
                 ...state.products,
                 products: tempDecProduct,
-                // count: DeCount
+
             }
             
     

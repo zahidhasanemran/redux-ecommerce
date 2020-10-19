@@ -3,7 +3,8 @@ import style from './BestSeller.module.css';
 import BestShop from './BestShop/BestShop';
 import Category from './Category/Category';
 import SectionTitle from '../../../component/SectionTitle/SectionTitle'
-import { BestProCatFilter } from '../../../e-store/actions/ProductCreator';
+import { BestProCatFilter } from '../../../e-store/actions';
+
 
 
 
