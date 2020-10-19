@@ -17,7 +17,7 @@ const SingleRroductPage = (props) => {
 
     useEffect(() => {
         dispatch(SingleProductRequested(proId))
-    }, []);
+    }, [cart]);
 
     
 

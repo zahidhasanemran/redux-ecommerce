@@ -19,7 +19,7 @@ filter at best product
 other slider product load from redux 
 Single Product page 
 Product count increment decrement 
--> Add to cart functin
+Add to cart functin
 -> Price calculation function 
 -> cart page
 -> checkout page

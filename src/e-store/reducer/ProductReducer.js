@@ -23,6 +23,7 @@ const productReducer = (state = productState, action) => {
         case actionTypes.SAVE_PRODUCT:
             return{
                 ...state,
+                ...state.products,
                 products: action.products,
                 loading: false,
                 emran:true
@@ -38,12 +39,14 @@ const productReducer = (state = productState, action) => {
         case actionTypes.BEST_PRODUCT_FILTER:
             return{
                 ...state,
+                ...state.bestFiltered,
                 bestFiltered: action.bestFiltered.filter(pro => pro.best)
             }
             
         case actionTypes.FEATURED_PRODUCT_FILTER:
             return{
                 ...state,
+                ...state.featuredFiltered,
                 featuredFiltered: action.feturedFilter.filter(pro => pro.featured)
             }
             
@@ -51,12 +54,14 @@ const productReducer = (state = productState, action) => {
         case actionTypes.NEW_PRODUCT_FILTER:
             return{
                 ...state,
+                ...state.newProducts,
                 newProducts: action.newProducts.filter(pro => pro.newS)
             }
             
         case actionTypes.FILTER_PRODUCT:
             return{
                 ...state,
+                ...state.filteredProduct,
                 filteredProduct: action.products
             }
             
@@ -66,6 +71,7 @@ const productReducer = (state = productState, action) => {
             
             return{
                 ...state,
+                ...state.category,
                 category: cate
             }
     
@@ -88,16 +94,17 @@ const productReducer = (state = productState, action) => {
             
     
         case actionTypes.GET_DETAILS_PRODUCT:
-            
+            let dtP = state.products.length > 0 ? state.products : action.products
             return{
                 ...state,
                 ...state.detailsProd,
-                detailsProd: action.products.filter(x => x.id == action.id)
+                detailsProd: dtP.filter(x => x.id == action.id)
             }
     
         case actionTypes.PRODUCT_COUNT_LOAD:
             return{
                 ...state,
+                ...state.count,
                 count: state.count
             }
             
@@ -143,23 +150,20 @@ const productReducer = (state = productState, action) => {
             
     
         case actionTypes.PRODUCT_COUNT_INCREMENT:
-            // console.log(state.products);
             let tempIncProduct = [];
-            // let InCount = state.count;
             let inX = [...state.products].map(pro => {
                 if(pro.id != action.id){
                     tempIncProduct.push(pro);
                 }else{
                     pro.qty++;
-                    // InCount = InCount == 0 ? InCount + pro.qty : state.count + 1
                     tempIncProduct.push(pro);
                 }
             })
-            // console.log(tempIncProduct);
+            console.log(tempIncProduct);
             return{
                 ...state,
+                ...state.products,
                 products: tempIncProduct,
-                // count: InCount
             }
             
         case actionTypes.PRODUCT_COUNT_DECREMENT:
@@ -177,6 +181,7 @@ const productReducer = (state = productState, action) => {
             console.log(tempDecProduct);
             return{
                 ...state,
+                ...state.products,
                 products: tempDecProduct,
                 // count: DeCount
             }

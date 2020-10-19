@@ -98,7 +98,7 @@ export const ProductRequested = () => {
 }
 
 export const allProducts = () => {
-    // alert("porduct laod start")
+    
     return dispatch => {
         Axios.get('http://localhost:5000/api/products')
         .then(res => {
@@ -132,7 +132,6 @@ export const SingleProductRequested = (id) => {
         .then(res => {
             dispatch(getDetailsProduct(res.data, id))
             dispatch(SaveProducts(res.data))
-            // dispatch(productCountIncrement(res.data, id))
         })
         .catch(error => {
             dispatch(FailedProducts(error))
