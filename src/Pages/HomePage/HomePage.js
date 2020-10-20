@@ -6,7 +6,7 @@ import NewArival from './NewArival/NewArival';
 import SeasonSeller from './SeasonSeller/SeasonSeller';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BestProductFilter, FeaturedProductFilter, NewProductFilter, SaveProductCategory } from '../../e-store/actions';
+import { BestProductFilter, FeaturedProductFilter, NewProductFilter, SetFilterProduct } from '../../e-store/actions';
 
 
 
@@ -23,10 +23,11 @@ function HomePage() {
 
     const chainDis = async function f() {
         if(!loading){
-            dispatch(SaveProductCategory(products));
+            // dispatch(SaveProductCategory(products));
             dispatch(BestProductFilter(products));
             dispatch(NewProductFilter(products));
             dispatch(FeaturedProductFilter(products));
+            dispatch(SetFilterProduct(products));
         } 
     }
       

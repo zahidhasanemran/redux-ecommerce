@@ -24,23 +24,33 @@ export const FailedProducts  = (error) => {
     }
 }
 
-export const BestProCatFilter = (pro) => {
+export const BestProCatFilter = (cat, products) => {
     return{
         type: actions.BEST_PRODUCT_CAT_FILTER,
-        filterBy: pro
+        filterBy: cat,
+        products: products
     }
 }
 
-export const ShopProFilter = (cat) => {
+export const ShopProFilter = (cat, products) => {
     return{
         type: actions.SHOP_PRODUCT_FILTER,
-        filterBy: cat
+        filterBy: cat,
+        products
+    }
+}
+
+export const AddedToCart = (id, cart) => {
+    return{
+        type: actions.ADDED_TO_CART,
+        id: id,
+        cart
     }
 }
 
 export const BestProductFilter = (fproducts) => {
     return{
-        type: actions.BEST_PRODUCT_FILTER,
+        type: actions.BEST_PRODUCT_SET,
         bestFiltered: fproducts
     }
 }
@@ -54,7 +64,7 @@ export const FeaturedProductFilter = (feturedProduct) => {
 
 export const NewProductFilter = (newProducts) => {
     return {
-        type: actions.NEW_PRODUCT_FILTER,
+        type: actions.NEW_PRODUCT_SET,
         newProducts: newProducts
     }
 }
@@ -66,9 +76,9 @@ export const SaveProductCategory = (products) => {
     }
 }
 
-export const FilterProduct = (products) => {
+export const SetFilterProduct = (products) => {
     return {
-        type: actions.FILTER_PRODUCT,
+        type: actions.SET_FILTER_PRODUCT,
         products: products
     }
 }
@@ -90,6 +100,7 @@ export const ProductRequested = () => {
         Axios.get('http://localhost:5000/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))
+            dispatch(SaveProductCategory(res.data));
         })
         .catch(error => {
             dispatch(FailedProducts(error))
@@ -161,10 +172,9 @@ export const productCountDecrement = (id) => {
     }
 }
 
-export const addToCart = ( id) => {
+export const addToCart = (id) => {
     return {
         type: actions.ADD_TO_CART,
-        id: id,
-        // products: products
+        id: id
     }
 }

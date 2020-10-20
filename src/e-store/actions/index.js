@@ -23,6 +23,7 @@ export {
     addToCart,
     NewProductFilter,
     SaveProductCategory,
-    FilterProduct,
-    getDetailsProduct
+    SetFilterProduct,
+    getDetailsProduct, 
+    AddedToCart
 } from './ProductCreator';
