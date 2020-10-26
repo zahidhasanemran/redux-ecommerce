@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import SectionTitle from '../../../component/SectionTitle/SectionTitle';
-import SingleProduct from '../../../component/singleProduct/SingleProduct';
-import style from './FeaturedProduct.module.css'
+import SectionTitle from '../SectionTitle/SectionTitle';
+import SingleProduct from '../singleProduct/SingleProduct';
+import style from './ProductSlider.module.css'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import SlicArrow from '../../../component/ui/favIcon/SlicArrow/SlicArrow'
-import { connect } from 'react-redux';
+import SlicArrow from '../ui/favIcon/SlicArrow/SlicArrow'
 
 
 
 
-class FeaturedProduct extends Component {
 
-
+class ProductSlider extends Component {
 
     render() {
-
-        
 
         function PrevButton({ onClick }) {
             return <button onClick={onClick} className={style.slickprev} > <SlicArrow /> </button>;
@@ -47,14 +43,14 @@ class FeaturedProduct extends Component {
         return (
             <div className={`${style.newarrival_section} mt-4`}>
             <div className="section_heading pb-5 pt-4 pl-md-3 pr-md-5">
-                <SectionTitle sectionTitle="Featured Product" /> 
+                <SectionTitle sectionTitle={this.props.title} /> 
             </div>
             <div className={style.newArrivalSlider2}>
 
             <Slider {...settings}>
 
                 {
-                    this.props.featuredFiltered.map(prod => {
+                    this.props.sliderProduct.map(prod => {
                         return(
                             <div className={style.single_slide} key={prod.id}>
                                 <div className={`${style.single_product} sidebar_two`}>
@@ -81,16 +77,16 @@ class FeaturedProduct extends Component {
 }
 
 
-const mapStateToProps = state => {
+// const mapStateToProps = state => {
     
-    return {
-        featuredFiltered: state.ProductReducer.featuredFiltered,
-        products: state.ProductReducer.products,
-        // error:state.ProductReducer.error
-    }
-}
+//     return {
+//         featuredFiltered: state.ProductReducer.featuredFiltered,
+//         // products: state.ProductReducer.products,
+//         // error:state.ProductReducer.error
+//     }
+// }
 
 
 
 
-export default connect(mapStateToProps)(FeaturedProduct);
+export default ProductSlider;

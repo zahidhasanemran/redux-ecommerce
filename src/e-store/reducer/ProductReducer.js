@@ -17,7 +17,11 @@ const productState = {
     detailsProd: [],
     count: 0,
     cart:[],
-    iniCount: 1
+    iniCount: 1,
+    totalPrice: 0,
+    delivery: 30,
+    relatedProduct: [],
+    relatedProFilter: [],
 }
 
 
@@ -124,105 +128,141 @@ const productReducer = (state = productState, action) => {
             // let dtP = state.products.length > 0 ? state.products : action.products
             return{
                 ...state,
-                ...state.products,
                 ...state.detailsProd,
+                ...state.relatedProduct,
+                ...state.relatedProFilter,
+                relatedProduct: action.products,
+                relatedProFilter: action.products,
                 detailsProd: action.products.filter(x => x.id == action.id)
             }
-    
-        case actionTypes.ADDED_TO_CART:
+            
+        // working details product page 
+        case actionTypes.RELATED_PRODUCT:
+            const tempRelPro = action.relatedProduct.filter(x => x.category == action.category);
             return{
                 ...state,
+                ...state.products,
+                ...state.relatedProduct,
+                ...state.relatedProFilter,
+                relatedProFilter: tempRelPro
             }
-    
-        // case actionTypes.PRODUCT_COUNT_LOAD:
-        //     return{
-        //         ...state,
-        //         ...state.count,
-        //         count: state.count
-        //     }
-            
-    
-        case actionTypes.ADD_TO_CART:
-            /*
-
-            -> See how rokomari works 
-            -> take previous cart 
-            -> take requested product 
-            -> take qty of requested product 
-            -> check if the product is already in cart 
-                -> increase the qty with qty variable 
-            -> else pushed the requested product to the cart 
-            */
 
 
-            let tempCart = state.cart;
- 
-            let cartProduct = state.products.find(x => x.id == action.id);
-
-            
-
-            let alreadyPro = tempCart.some(x => x.id === action.id);
-            
-
-            if(alreadyPro){
-                tempCart = tempCart
-                // let cartProduct2 = state.products.find(x => x.id == action.id);
-                // // let qty = cartProduct2.qty;
-                // tempCart.map(x => {
-                //     let samId = x.id == action.id;
-                //     if(samId){
-                //         x.qty = state.iniCount > 1 ? state.iniCount + x.qty : x.qty + 1; //qty > 1 ? qty : x.qty + 1 //!== qty ? qty : x.qty + 1;
-                //     }
-                // })
-            }else{
-                tempCart.push(cartProduct); 
-            }
-            
+        // working details product page 
+        case actionTypes.DELETE_FROM_CART:
+            let cleanCart = [];
+            action.cart.map(cc => {
+                if(cc.id === action.id ){
+                    cc.qty = 1;
+                    cc.price = cc.price
+                    cc.total = cc.price
+                }
+                cleanCart.push(cc);
+            })
+            let delteCart = cleanCart.filter(x => x.id !== action.id);
+            let delteCartCount = delteCart.map(x => x.qty).reduce((total, current) => total + current);
+            let DelcartTotalPrice = delteCart.map(cc => cc.total).reduce((total, current) => total + current);
 
             return{
                 ...state,
                 ...state.cart,
-                cart: tempCart
+                ...state.totalPrice,
+                ...state.count,
+                ...state.products,
+                cart: delteCart,
+                totalPrice: DelcartTotalPrice,
+                products: state.products,
+                count: delteCartCount
             }
+    
+       
+    
+        
             
+        // working 
+        case actionTypes.ADD_TO_CART:
+            let tempCart = state.cart;
+            let cartProduct = state.products.find(x => x.id == action.id);
+            let alreadyPro = tempCart.some(x => x.id === action.id);
+
+            if(alreadyPro){
+                tempCart = tempCart
+            }else{
+                tempCart.push(cartProduct); 
+            }
+
+            let x = action.cart.map(x => x.qty).reduce((total = 0, current) => {
+                return total + current;
+            });
+
+            let cartTotalPrice = action.cart.map(cc => cc.total).reduce((total, current) => total + current);
+            // console.log(state.totalPrice);
+            
+            // console.log(x);
+
+            return{
+                ...state,
+                ...state.cart,
+                ...state.count,
+                ...state.totalPrice,
+                cart: tempCart,
+                count: x,
+                totalPrice: cartTotalPrice
+            }
+        
+        
+        
         // working product details page 
         case actionTypes.PRODUCT_COUNT_INCREMENT:
-            let tempIncProduct = [];
-            let inX = [...state.products].map(pro => {
-                if(pro.id != action.id){
-                    tempIncProduct.push(pro);
-                }else{
-                    pro.qty = pro.qty + 1;
-                    tempIncProduct.push(pro);
+            let tempInCount = 0;
+            let tempInCart = [];
+            // let tempInPrice = 0;
+            action.cart.map(tc => {
+                if(tc.id === action.id){
+                    tc.qty = tc.qty + 1;
+                    tc.total = tc.price * tc.qty
                 }
-            })
-            console.log(tempIncProduct);
-            return{
+                tempInCount = action.count + 1;
+                tempInCart.push(tc);
+            });
+            let cartInTotalPrice = action.cart.map(cc => cc.total).reduce((total, current) => total + current);
+            console.log(tempInCart);
+            console.log(state.products);
+            return {
                 ...state,
-                ...state.products,
-                ...state.productNumberUpdate,
-                ...state.iniCount,
-                iniCount: state.iniCount + 1,
-                products: tempIncProduct
+                ...state.cart,
+                ...state.count,
+                ...state.totalPrice,
+                cart: tempInCart,
+                count: tempInCount,
+                totalPrice: cartInTotalPrice
             }
+
+
         // working product details page 
         case actionTypes.PRODUCT_COUNT_DECREMENT:
-            let tempDecProduct = [];
-            let Dex = [...state.products].map(pro => {
-                if(pro.id != action.id){
-                    tempDecProduct.push(pro);
-                }else{
-                    pro.qty = pro.qty <= 0 ? pro.qty = 0 : pro.qty - 1
-                    tempDecProduct.push(pro);
-                }
-            })
-            console.log(tempDecProduct);
-            return{
-                ...state,
-                ...state.products,
-                ...state.productNumberUpdate,
-                products: tempDecProduct
 
+            let tempDeCount = 0;
+            let tempDeCart = [];
+            action.cart.map(tc => {
+                if(tc.id === action.id){
+                    tc.qty = tc.qty - 1;
+                    tc.total = tc.price * tc.qty
+                }
+                tempDeCount = action.count - 1;
+                tempDeCart.push(tc);
+            });
+
+            let cartDefTotalPrice = action.cart.map(cc => cc.total).reduce((total, current) => total + current);
+            
+            return {
+                ...state,
+                ...state.cart,
+                ...state.count,
+                ...state.totalPrice,
+                cart: tempDeCart,
+                count: tempDeCount,
+                totalPrice: cartDefTotalPrice
             }
             
     

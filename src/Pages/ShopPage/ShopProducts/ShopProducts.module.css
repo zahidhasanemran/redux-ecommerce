@@ -7,3 +7,11 @@
 .Products{
     margin-top: 30px;
 }
+.Products .col-lg-4{
+    box-shadow: 0 3px 10px rgba(25,17,34,.05);
+    transition: .3s all linear;
+}
+.Products .col-lg-4:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 42px rgba(25,17,34,.1);
+}

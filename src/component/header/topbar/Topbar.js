@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classes from './Topbar.module.css'
 import Logo from '../../ui/logo/Logo'
 import logoImg from '../../../assets/img/logo.png'
@@ -6,19 +6,19 @@ import iconAcount from '../../../assets/img/icon-account.jpg'
 import cartImg from '../../../assets/img/cart.png'
 import { FaSearch } from "react-icons/fa";
 // import {ProductCountLoad} from '../../../e-store/actions/index'
-// import { useDispatch, useSelector } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const Topbar = () => {
 
-    // let count = useSelector(state => state.ProductReducer.count)
+    let count = useSelector(state => state.ProductReducer.count)
     // let dispatch = useDispatch();
-    // // console.log(count);
+    // console.log(count);
 
     // useEffect(()=>{
     //     dispatch(ProductCountLoad());
-    // }, []);
+    // }, [count]);
 
     return (
         <div className={classes.header_section}>
@@ -39,11 +39,11 @@ const Topbar = () => {
                     <div className="col-md-4 text-right col-sm-3">
                         <div className={classes.cart_section}>
                             <ul className="list-unstyled">
-                                <li className="list-inline-item"><a href="/"><img src={iconAcount} alt="account" /></a></li>
+                                <li className="list-inline-item"><Link to="/"><img src={iconAcount} alt="account" /></Link></li>
                                 <li className="list-inline-item">
-                                    <a href="/"><img src={cartImg} alt="cart" />
-                                    <small style={{position: "relative", top: '-10px', left: '-5px',color: 'green'}}> 2 </small>
-                                    </a>
+                                    <Link to="/cart"><img src={cartImg} alt="cart" />
+                                    <small style={{position: "relative", top: '-10px', left: '-5px',color: 'green'}}> {count} </small>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

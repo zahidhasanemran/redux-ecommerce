@@ -40,13 +40,6 @@ export const ShopProFilter = (cat, products) => {
     }
 }
 
-export const AddedToCart = (id, cart) => {
-    return{
-        type: actions.ADDED_TO_CART,
-        id: id,
-        cart
-    }
-}
 
 export const BestProductFilter = (fproducts) => {
     return{
@@ -150,31 +143,52 @@ export const allProducts = () => {
 
 
 
-export const SingleProductRequested = (id) => {
+export const DeleteFromCart = (id, cart, products) => {
+    return {
+        type: actions.DELETE_FROM_CART,
+        id,
+        cart,
+        products
+    }
+}
+
+
+
+
+export const RelatedProduct = (category, relatedProduct) => {
+    // console.log(category, relatedProduct);
+    return {
+        type: actions.RELATED_PRODUCT,
+        category,
+        relatedProduct
+    }
+}
+
+
+export const productCountIncrement = (id, cart, products, count) => {
     return {
         type: actions.PRODUCT_COUNT_INCREMENT,
         id: id,
+        cart: cart, 
+        products,
+        count
     }
 }
 
-
-export const productCountIncrement = (id) => {
-    return {
-        type: actions.PRODUCT_COUNT_INCREMENT,
-        id: id
-    }
-}
-
-export const productCountDecrement = (id) => {
+export const productCountDecrement = (id, cart, products, count) => {
     return {
         type: actions.PRODUCT_COUNT_DECREMENT,
-        id: id
+        id: id,
+        cart: cart,
+        products,
+        count
     }
 }
 
-export const addToCart = (id) => {
+export const addToCart = (id, cart) => {
     return {
         type: actions.ADD_TO_CART,
-        id: id
+        id: id,
+        cart
     }
 }

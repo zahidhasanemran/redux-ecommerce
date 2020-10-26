@@ -1,7 +1,7 @@
 .ProductTitle{
     color: #000!important;
     font-size: 15px;
-    text-align: center;
+    /* text-align: center; */
     line-height: 20px;
     display: block;
     margin-top: 1rem !important;

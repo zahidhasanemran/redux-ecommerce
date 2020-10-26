@@ -1,0 +1,27 @@
+
+.qty{
+    margin-right: 10px;
+}
+.qty{
+    display: flex;
+    align-items: center;
+}
+
+.qty button{
+    outline: none;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: normal;
+
+}
+.qty p{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    margin: 0px 5px;
+    text-align: center;
+    line-height: 30px;
+}

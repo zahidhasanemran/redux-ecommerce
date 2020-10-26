@@ -1,12 +1,12 @@
 import React, {Fragment } from 'react';
 import BestSeller from './BestSeller/BestSeller';
-import FeaturedProduct from './FeaturedProduct/FeaturedProduct';
 import TodaysDeal from './HomeSidebar/TodaysDeal/TodaysDeal';
 import NewArival from './NewArival/NewArival';
 import SeasonSeller from './SeasonSeller/SeasonSeller';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BestProductFilter, FeaturedProductFilter, NewProductFilter, SetFilterProduct } from '../../e-store/actions';
+import ProductSlider from '../../component/ProductSlider/ProductSlider';
 
 
 
@@ -16,6 +16,7 @@ function HomePage() {
 
     const products = useSelector(state => state.ProductReducer.products);
     const loading = useSelector(state => state.ProductReducer.loading);
+    const featuredFiltered = useSelector(state => state.ProductReducer.featuredFiltered);
     // console.log(loading);
 
     
@@ -57,7 +58,7 @@ function HomePage() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <FeaturedProduct />
+                            <ProductSlider title="Featured Products" sliderProduct={featuredFiltered} />
                         </div>
                     </div>
                 </div>

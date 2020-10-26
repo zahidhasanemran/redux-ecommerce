@@ -31,3 +31,44 @@ Add to cart functin
 -> Product added to the cart on product hover 
 -> single product to scroll top 
 -> from single page click on category will take same category shop page 
+
+case actionTypes.PRODUCT_COUNT_INCREMENT:
+            let tempIncProduct = [];
+            // console.log(action.products);
+            let inX = action.products.map(pro => {
+                if(pro.id != action.id){
+                    tempIncProduct.push(pro);
+                }else{
+                    pro.qty = pro.qty;
+                    tempIncProduct.push(pro);
+                }
+            })
+            // console.log(tempIncProduct);
+
+
+            let tempInCart = [];
+            let tempInCount = 0;
+            let inCart = action.cart.map(pro => {
+                if(pro.id != action.id){
+                    tempInCart.push(pro)
+                }else{
+                    pro.qty = pro.qty + 1;
+                    tempInCart.push(pro);
+                    tempInCount = action.count + 1
+                }
+            })
+            // console.log(tempInCart);
+
+
+            return{
+                ...state,
+                ...state.products,
+                ...state.productNumberUpdate,
+                ...state.iniCount,
+                ...state.cart,
+                ...state.count,
+                iniCount: state.iniCount + 1,
+                products: tempIncProduct,
+                cart: tempInCart,
+                count: tempInCount
+            }

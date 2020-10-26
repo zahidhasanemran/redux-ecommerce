@@ -1,0 +1,37 @@
+.SingleCart:last-child{
+    margin-bottom: 50px;
+}
+.SingleCart:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 42px rgba(25,17,34,.1);
+}
+.SingleCart{
+    background: #fff;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(25,17,34,.05);
+    transition: .3s all linear;
+
+}
+.cart_img{}
+.cart_img img{
+    height: 120px;
+    width: 100px;
+}
+.cart_qty_details{
+    width: calc(100% - 170px);
+    padding: 0px 15px;
+}
+.cart_qty_details {}
+.cart_action{}
+.delete_icon{
+    width: 50px;
+}
+.delete_icon svg{
+    width: 25px;
+    height: 24px;
+    color: red;
+}
+
+

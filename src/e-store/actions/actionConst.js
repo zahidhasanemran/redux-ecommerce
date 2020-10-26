@@ -34,6 +34,9 @@ export const PRODUCT_COUNT_DECREMENT = "PRODUCT_COUNT_DECREMENT";
 
 
 export const ADD_TO_CART = "ADD_TO_CART";
-export const ADDED_TO_CART = "ADDED_TO_CART";
+export const DELETE_FROM_CART = "DELETE_FROM_CART";
+
+
+export const RELATED_PRODUCT = "RELATED_PRODUCT";
 
 

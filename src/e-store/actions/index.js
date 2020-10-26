@@ -15,7 +15,7 @@ export {
     BestProCatFilter,
     ShopProFilter,
     // ShopProductRequested,
-    SingleProductRequested,
+    // SingleProductRequested,
     ProductCountLoad,
     FeaturedProductFilter,
     productCountIncrement,
@@ -24,6 +24,7 @@ export {
     NewProductFilter,
     SaveProductCategory,
     SetFilterProduct,
-    getDetailsProduct, 
-    AddedToCart
+    getDetailsProduct,
+    DeleteFromCart,
+    RelatedProduct
 } from './ProductCreator';

@@ -3,14 +3,14 @@ import style from './ShopSidebar.module.css';
 import Category from '../../HomePage/BestSeller/Category/Category';
 import SidebarTitle from '../../../component/SidebarTitle/SidebarTitle';
 import { ShopProFilter } from '../../../e-store/actions/index';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 
 
 
 function ShopSidebar() {
 
-    const products = useSelector(state => state.ProductReducer.products);
+    // const products = useSelector(state => state.ProductReducer.products);
 
     return (
         <div className={style.shopSidebar}>

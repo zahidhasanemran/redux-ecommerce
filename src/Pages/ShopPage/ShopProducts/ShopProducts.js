@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './ShopProducts.module.css'
+import './ShopProducts.module.css'
 import SectionTitle from '../../../component/SectionTitle/SectionTitle'
 import SingleProduct from '../../../component/singleProduct/SingleProduct'
 import { useSelector } from 'react-redux';
@@ -8,10 +9,10 @@ import { useSelector } from 'react-redux';
 
 const ShopProducts = () => {
 
-    let products = useSelector(state => state.ProductReducer.products);
+    // let products = useSelector(state => state.ProductReducer.products);
     const shopFilter = useSelector(state => state.ProductReducer.shopFilter);
-    console.log(shopFilter);
-    console.log(products);
+    // console.log(shopFilter);
+    // console.log(products);
 
     return (
         <div className={style.ShopProducts}>
