@@ -40,6 +40,10 @@ const SingleRroductPage = (props) => {
 
     useEffect(() => {
         chainDis()
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
     }, [loading, relatedProduct, category]);
     
 

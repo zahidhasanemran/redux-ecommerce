@@ -11,6 +11,8 @@ import CounterReducer from './e-store/reducer/CounterReducer';
 import FooterReducer from './e-store/reducer/FooterReducer';
 import HeaderReducer from './e-store/reducer/HeaderReducer';
 import ProductReducer from './e-store/reducer/ProductReducer';
+import RegisterReducer from './e-store/reducer/RegisterReducer';
+import UserReducer from './e-store/reducer/UserReducer';
 import thunk from 'redux-thunk';
 const composeEnhancers = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true, traceLimit: 25 })) || compose;
@@ -20,7 +22,9 @@ const rootReducer = combineReducers({
   CounterReducer: CounterReducer,
   FooterReducer: FooterReducer,
   HeaderReducer: HeaderReducer,
-  ProductReducer: ProductReducer
+  ProductReducer: ProductReducer, 
+  UserReducer: UserReducer,
+  RegisterReducer: RegisterReducer
 });
 
 const wrapperStore = createStore(rootReducer, composeEnhancers(

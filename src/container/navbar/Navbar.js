@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
+
+
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import classes from './Navbar.module.css';
 
-class Navbar extends Component {
 
-    state = {
-        navItems: [
+const Navbar = () => {
+
+    const UserInfo = useSelector(state => state.UserReducer)
+    const {error, isAuth, loading, userInfo: {id, email, name, isAdmin}} = UserInfo;
+    // console.log(isAuth);
+
+    const [navItems, setNavItems] = useState(
+        [
             {id: 1, name: "Home", link:"/"},
             {id: 2, name: "Shop", link:"/shop"},
             {id: 3, name: "Contact", link:"/contact"},
@@ -14,34 +22,35 @@ class Navbar extends Component {
             {id: 6, name: "Checkout", link:"/checkout"},
             {id: 7, name: "Login", link:"/login"},
         ]
-    }
+    )  
 
 
 
-    render() {
-        
-        return (
-            <div className={classes.menu_bar}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12 text-center">
-                            <ul className="list-unstyled">
-                                {
-                                    this.state.navItems.map((nav, index) => {
-                                        return <li key={index} className="list-inline-item"><Link to={nav.link} exact={(nav.link==="/").toString()} className="d-block active"> {nav.name} </Link></li>
-                                    })
-                                }
-                                
-                                
-                            </ul>
-                        </div>
+
+    return (
+        <div className={classes.menu_bar}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12 text-center">
+                        <ul className="list-unstyled">
+                            {
+                                navItems.map((nav, index) => {
+                                    
+                                    if(nav.link === "/login" && isAuth === true){
+                                        return <li key={index} className="list-inline-item"><Link to="/logout" exact={(nav.link==="/").toString()} className="d-block"> Logout </Link></li>
+                                    }
+
+                                    return <li key={index} className="list-inline-item"><Link to={nav.link} exact={(nav.link==="/").toString()} className="d-block active"> {nav.name} </Link></li>
+                                })
+                            }
+                            
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
-        );
-    }
-}
-
-
+        </div>
+    );
+};
 
 export default Navbar;

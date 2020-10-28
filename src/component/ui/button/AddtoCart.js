@@ -17,7 +17,7 @@ function AddtoCart({id}) {
     const addToCART = (e, id) => {
         e.preventDefault();
         dispatch(addToCart(id, cart));
-        console.log(cart);
+        // console.log(cart);
     }
 
     

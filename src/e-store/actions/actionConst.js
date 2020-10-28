@@ -40,3 +40,18 @@ export const DELETE_FROM_CART = "DELETE_FROM_CART";
 export const RELATED_PRODUCT = "RELATED_PRODUCT";
 
 
+export const USER_LOGIN_REQ = 'USER_LOGIN_REQ'; 
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS'; 
+export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED'; 
+
+
+export const REGISTER_REQ = 'REGISTER_REQ'; 
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'; 
+export const REGISTER_FAILED = 'REGISTER_FAILED'; 
+
+
+
+export const SAVE_SHIPPING = 'SAVE_SHIPPING'; 
+export const SAVE_PAYMENT = 'SAVE_PAYMENT'; 
+
+

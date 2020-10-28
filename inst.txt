@@ -11,6 +11,8 @@ data filter
 custom counter 
 firebase authentication 
 placeholder loading animation 
+check auth in checkout button link 
+
 
 
 
@@ -20,55 +22,16 @@ other slider product load from redux
 Single Product page 
 Product count increment decrement 
 Add to cart functin
--> Price calculation function 
--> cart page
--> checkout page
--> login page 
--> signup page 
+Price calculation function 
+cart page
+checkout page
+login page 
+signup page 
 -> placehoder loading 
 -> error hoc
 -> modal hoc 
--> Product added to the cart on product hover 
--> single product to scroll top 
--> from single page click on category will take same category shop page 
-
-case actionTypes.PRODUCT_COUNT_INCREMENT:
-            let tempIncProduct = [];
-            // console.log(action.products);
-            let inX = action.products.map(pro => {
-                if(pro.id != action.id){
-                    tempIncProduct.push(pro);
-                }else{
-                    pro.qty = pro.qty;
-                    tempIncProduct.push(pro);
-                }
-            })
-            // console.log(tempIncProduct);
+-> improve design 
+-> optimization
+single product to scroll top 
 
 
-            let tempInCart = [];
-            let tempInCount = 0;
-            let inCart = action.cart.map(pro => {
-                if(pro.id != action.id){
-                    tempInCart.push(pro)
-                }else{
-                    pro.qty = pro.qty + 1;
-                    tempInCart.push(pro);
-                    tempInCount = action.count + 1
-                }
-            })
-            // console.log(tempInCart);
-
-
-            return{
-                ...state,
-                ...state.products,
-                ...state.productNumberUpdate,
-                ...state.iniCount,
-                ...state.cart,
-                ...state.count,
-                iniCount: state.iniCount + 1,
-                products: tempIncProduct,
-                cart: tempInCart,
-                count: tempInCount
-            }
