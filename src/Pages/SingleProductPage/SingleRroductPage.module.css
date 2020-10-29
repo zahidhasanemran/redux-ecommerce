@@ -22,7 +22,7 @@
 .ProductDetails h4{
     font-size: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #d6fac3;
 }
 .reviews a{
     margin-left: 15px;
@@ -30,7 +30,7 @@
 .reviews{
     margin-top: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #d6fac3;
     display: flex;
     align-items: center;
 }

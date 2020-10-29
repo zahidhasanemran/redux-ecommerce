@@ -60,7 +60,7 @@ const Register = (props) => {
                 </div>
 
                 <div className={`${style.single_form} text-center`}>
-                    <button type="submit">Register</button>
+                    <button className="defBtn" type="submit">Register</button>
                 </div>
 
                 <p className="pt-4"><small>Already Have an account?</small></p>

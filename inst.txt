@@ -32,6 +32,7 @@ signup page
 -> modal hoc 
 -> improve design 
 -> optimization
+-> responsive 
 single product to scroll top 
 
 

@@ -59,7 +59,7 @@ const Login = (props) => {
                 </div>
 
                 <div className={`${style.single_form} text-center`}>
-                    <button type="submit">Login</button>
+                    <button className="defBtn" type="submit">Login</button>
                 </div>
 
                 <p className="pt-4"><small>New in Amazona ?</small></p>

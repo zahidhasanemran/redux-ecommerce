@@ -43,13 +43,9 @@ export const UserLogin = (email, password) => {
             Cookie.set('userInfo', JSON.stringify(res.data))
         }).catch((error) => {
             // console.log(error.response);
-            dispatch(LoginFailed(error.response.data.message))
+            dispatch(LoginFailed(error.message)) // error.response.data.message || 
         })
-        
-        
-        
-
-        
+ 
        
     }
 }

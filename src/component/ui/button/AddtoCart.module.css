@@ -3,6 +3,7 @@
 .addtocart{
 	background: #62a83d;
 	color: #fff!important;
+	border: 0px solid #62a83d;
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 8px 16px;
@@ -11,7 +12,11 @@
 	border-radius: 3px;
 }
 .addtocart:hover{
-	background: #ff4318;
+	transform: translateY(2px);
+	box-shadow: 0 3px 10px rgba(25,17,34,.05);
+	border: 1px solid #d6fac3;
+	background: #fff;
+	color: #62a83d!important;
 }
 
 .single_product .addtocart{

@@ -19,27 +19,15 @@ function SingleProduct({img,title,price, id}) {
                 
                 <div className={style.hover_section}>
                     <div className={`${style.hover_two} h-100 w-100`}>
-                        {/* <ul className="list-unstyled text-right">
-                            <li className="mt-3">
-                                <p className="pl-3">Quick Vew</p>
-                                <a href="/"><FaSearchPlus /></a>
-                            </li>
-                            <li className="mt-3">
-                                <p>Wish List</p>
-                                <a href="/"><FaHeart /> </a>
-                            </li>
-                            <li className="mt-3">
-                                <p>Compare</p>
-                                <a href="/"><FaStar /> </a>
-                            </li>
-                        </ul> */}
                         <AddtoCart id={id} />
                     </div>
                 </div>
             </div>
             
             <div className={`${style.add_to} text-center`}>
+                <div className="mt-3">
                 <ProductTitle id={id} title={title} />
+                </div>
                 <Reviews />
                 <Price dam={price} />
             </div>

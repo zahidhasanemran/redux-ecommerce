@@ -39,7 +39,7 @@ const Payment = (props) => {
                     
 
                     <div className={`${style.single_form} text-center`}>
-                        <button type="submit">Continue</button>
+                        <button className="defBtn" type="submit">Continue</button>
                     </div>
 
                     

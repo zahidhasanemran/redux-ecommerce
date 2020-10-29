@@ -1,2 +1,16 @@
 .placeorder{}
-.list{}
+.list{
+    background: #fff;
+    margin-top: 30px;
+    box-shadow: 0 3px 10px rgba(25,17,34,.05);
+    padding: 30px;
+    border-radius: 4px;
+}
+.list h3{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.list ul li{
+    line-height: 30px;
+}

@@ -39,6 +39,33 @@ body{
 }
 
 
+.defBtn{
+	color: #62a83d;
+	outline: 0;
+	border: 1px solid #62a83d;
+	border-radius: 2px;
+	background: #fff;
+	padding: 9px 25px;
+    border-radius: 3px;
+    transition: all .3s linear;
+}
+
+.defBtn:hover{
+	transform: translateY(2px);
+	box-shadow: 0 3px 10px rgba(25,17,34,.05);
+	border-color: #d6fac3;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1441px){
     p{
         font-size: 20px;

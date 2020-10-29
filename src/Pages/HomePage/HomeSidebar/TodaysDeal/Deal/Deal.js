@@ -34,36 +34,13 @@ function Deal() {
                         </ul>
                     </div>
                     <div className={classes.hover_two}>
-                        {/* <ul className="list-unstyled text-right">
-                            <li className="mb-2">
-                                <p className="pl-3">Quick Vew</p>
-                                <a href="/"><FaSearchPlus/></a>
-                            </li>
-                            <li className="mb-2">
-                                <p>Wish List</p>
-                                <a href="/"><FaHeart /></a>
-                            </li>
-                            <li className="">
-                                <p>Compare</p>
-                                <a href="/"><FaStar/></a>
-                            </li>
-                        </ul> */}
+                        
                     </div>
                 </div>
                 <div className="add_to text-center">
-                    {/* <a href="/" className="mt-3 d-block">Lorem ipsum dolor</a> */}
-                    <ProductTitle link="/" title="Lorem ipsum dolor"/>
+                    <div className="mt-3"><ProductTitle link="/" title="Lorem ipsum dolor"/></div>
                     <Reviews></Reviews>
-                    {/* <ul className="stars list-unstyled">
-                        <li className="list-inline-item"><i className="fas fa-star"></i></li>
-                        <li className="list-inline-item"><i className="fas fa-star"></i></li>
-                        <li className="list-inline-item"><i className="fas fa-star"></i></li>
-                        <li className="list-inline-item"><i className="fas fa-star"></i></li>
-                        <li className="list-inline-item"><i className="fas fa-star"></i></li>
-                    </ul> */}
-                    {/* <p className="price mt-3 mb-4 font-weight-bold">$129</p> */}
                     <Price dam="12.77"></Price>
-                    {/* <a href="/" className="addtocart">Add To Cart</a> */}
                     <AddtoCart link="/" />
                 </div>
             </div>

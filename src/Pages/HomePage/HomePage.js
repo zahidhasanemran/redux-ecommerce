@@ -55,7 +55,7 @@ function HomePage() {
                     </div>
                 </div>
                 
-                <div className="container">
+                <div className="container pb-5">
                     <div className="row">
                         <div className="col-md-12">
                             <ProductSlider title="Featured Products" sliderProduct={featuredFiltered} />

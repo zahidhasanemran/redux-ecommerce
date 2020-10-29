@@ -8,12 +8,12 @@
 }
 
 .CheckoutSteps > div{
-    border-top: .3rem #c0c0c0 solid;
-    color: #c0c0c0;
+    border-top: .3rem #ebebebc2 solid;
+    color: #000;
     flex: 1 1;
 }
 
 .CheckoutSteps > div.active{
-    border-top: .3rem #f08000 solid;
-    color: #f08000;
+    border-top: .3rem #e29126 solid;
+    color: #000;
 }

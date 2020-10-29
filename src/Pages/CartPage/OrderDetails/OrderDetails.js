@@ -22,7 +22,7 @@ const OrderDetails = (props) => {
         <div className={style.OrderDetails}>
             <h3>Checkout Summary</h3>
 
-            <ul>
+            <ul className="mt-3">
 
                 <h5 className="d-flex align-items-center justify-content-between">
                     <p>Total Products</p>
@@ -41,7 +41,7 @@ const OrderDetails = (props) => {
                     <p>Payable </p>
                     <p>$ {delivery + totalPrice} </p>
                 </h5>
-                 <button className="text-center d-inline-block" onClick={ props.btnPath === '/place-order' ? placeOrderHandle : checkOutHandle }> {props.btnPath === '/place-order' ? 'Place Order' : 'Checkout'} </button> 
+                 <button className="text-center d-inline-block defBtn mt-3" onClick={ props.btnPath === '/place-order' ? placeOrderHandle : checkOutHandle }> {props.btnPath === '/place-order' ? 'Place Order' : 'Checkout'} </button> 
                 
             </ul>
         </div>
