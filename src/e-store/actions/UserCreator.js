@@ -38,7 +38,7 @@ export const UserLogin = (email, password) => {
 
         await Axios.post('https://redux-backend.herokuapp.com/api/users/login', {email, password})
         .then((res) => {
-            // console.log(res);
+            res.header("Access-Control-Allow-Origin", "*")
             dispatch(LoginSuccess(res.data))
             Cookie.set('userInfo', JSON.stringify(res.data))
         }).catch((error) => {
