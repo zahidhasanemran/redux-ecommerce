@@ -26,9 +26,9 @@ export const RegisterReq = (name, email, password) => {
    
     return async dispatch => {
 
-        await Axios.post('https://redux-backend.herokuapp.com//api/users/register', {name, email, password})
+        await Axios.post('https://redux-backend.herokuapp.com/api/users/register', {name, email, password})
         .then((res) => {
-            res.header("Access-Control-Allow-Origin", "*")
+            // console.log(res);
             dispatch(RegisterSuccess(res.data))
             Cookie.set('userInfo', JSON.stringify(res.data))
         }).catch((error) => {
