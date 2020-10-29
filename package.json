@@ -2,7 +2,6 @@
   "name": "03-react-p",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -51,3 +50,5 @@
     "redux-thunk": "^2.3.0"
   }
 }
+
+
