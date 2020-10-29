@@ -27,7 +27,7 @@ export const UserLogin = (email, password) => {
     return async dispatch => {
 
         // try {
-        //     const {data} = await Axios.post('http://localhost:5000/api/users/login', {email, password});
+        //     const {data} = await Axios.post('https://redux-backend.herokuapp.com/api/users/login', {email, password});
         //     console.log(data);
         //     dispatch(LoginSuccess(data))
         //     Cookie.set('userInfo', JSON.stringify(data))
@@ -36,7 +36,7 @@ export const UserLogin = (email, password) => {
         //     dispatch(LoginFailed(error))
         // }
 
-        await Axios.post('http://localhost:5000/api/users/login', {email, password})
+        await Axios.post('https://redux-backend.herokuapp.com/api/users/login', {email, password})
         .then((res) => {
             // console.log(res);
             dispatch(LoginSuccess(res.data))
