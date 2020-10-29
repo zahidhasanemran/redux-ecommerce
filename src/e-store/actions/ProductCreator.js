@@ -90,7 +90,7 @@ export const getDetailsProduct = (products, id) => {
 export const ProductRequested = () => {
     
     return dispatch => {
-        Axios.get('https://redux-backend.herokuapp.com//api/products')
+        Axios.get('https://redux-backend.herokuapp.com/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))
             dispatch(SaveProductCategory(res.data));
@@ -104,7 +104,7 @@ export const ProductRequested = () => {
 export const allProducts = () => {
     
     return dispatch => {
-        Axios.get('https://redux-backend.herokuapp.com//api/products')
+        Axios.get('https://redux-backend.herokuapp.com/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))
         })
