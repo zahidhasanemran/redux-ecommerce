@@ -90,7 +90,7 @@ export const getDetailsProduct = (products, id) => {
 export const ProductRequested = () => {
     
     return dispatch => {
-        Axios.get('http://localhost:5000/api/products')
+        Axios.get('/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))
             dispatch(SaveProductCategory(res.data));
@@ -104,7 +104,7 @@ export const ProductRequested = () => {
 export const allProducts = () => {
     
     return dispatch => {
-        Axios.get('http://localhost:5000/api/products')
+        Axios.get('/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))
         })
