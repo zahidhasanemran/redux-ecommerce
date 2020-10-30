@@ -55,3 +55,7 @@ export const SAVE_SHIPPING = 'SAVE_SHIPPING';
 export const SAVE_PAYMENT = 'SAVE_PAYMENT'; 
 
 
+export const LOG_OUT = 'LOG_OUT'; 
+export const GET_LOG_OUT = 'GET_LOG_OUT'; 
+
+

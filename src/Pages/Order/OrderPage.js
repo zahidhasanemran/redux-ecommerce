@@ -12,7 +12,7 @@ const OrderPage = (props) => {
     const pros = useSelector(state => state.ProductReducer);
     const {cart, count} = pros
     const {isAuth, loading, paymentMethod, shipping, userInfo} = user;
-    // console.log(pros);
+    console.log(userInfo);
     // console.log(shipping);
     
     const checkoutButtonPath = props.match.path;

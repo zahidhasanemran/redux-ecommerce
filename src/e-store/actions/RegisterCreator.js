@@ -28,7 +28,7 @@ export const RegisterReq = (name, email, password) => {
 
         await Axios.post('http://localhost:5000/api/users/register', {name, email, password})
         .then((res) => {
-            // console.log(res);
+            console.log(res);
             dispatch(RegisterSuccess(res.data))
             Cookie.set('userInfo', JSON.stringify(res.data))
         }).catch((error) => {

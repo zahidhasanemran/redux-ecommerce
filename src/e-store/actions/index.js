@@ -31,7 +31,8 @@ export {
 
 
 export {
-    UserLogin
+    UserLogin,
+    GetLogOut
 } from './UserCreator'
 
 

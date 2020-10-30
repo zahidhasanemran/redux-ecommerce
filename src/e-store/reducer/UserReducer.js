@@ -8,7 +8,8 @@ const initialUser = {
         id: '',
         name: '',
         email: '',
-        isAdmin: false
+        isAdmin: false,
+        token: ''
     },
     isAuth: false
 }
@@ -25,6 +26,7 @@ const UserReducer = (state = initialUser, action) => {
             
     
         case acitonTypes.USER_LOGIN_SUCCESS:
+            // console.log(action.data);
             return{
                 loading: false,
                 userInfo: action.data,
@@ -37,6 +39,23 @@ const UserReducer = (state = initialUser, action) => {
             return{
                 ...state,
                 shipping: action.shipping
+            }
+            
+            
+            
+    
+        case acitonTypes.GET_LOG_OUT:
+            return{
+                ...state,
+                userInfo: {
+                    id: '',
+                    name: '',
+                    email: '',
+                    isAdmin: false,
+                    token: ''
+                },
+                isAuth: false
+
             }
             
             

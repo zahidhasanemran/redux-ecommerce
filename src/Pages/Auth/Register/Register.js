@@ -10,16 +10,15 @@ const Register = (props) => {
 
     const dispatch = useDispatch();
     const RegisterUser = useSelector(state => state.RegisterReducer)
-    // console.log(RegisterUser);
     const {loading, regInfo: {name, email, isAdmin}, error, isRegistered} = RegisterUser;
-    console.log(email, name);
+
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(RegisterReq(Username, Useremail, Userpassword))
         console.log("SUBMIT FORM ");
     }
     const redirect = props.location.search ? props.location.search.split("=")[1] : '/' ;
-    console.log(props.location);
+
     useEffect(()=>{
         if(email){
             props.history.push(redirect);

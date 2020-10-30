@@ -12,6 +12,24 @@ export const LoginSuccess = (data) => {
     }
 }
 
+export const GetLogOut = () => {
+    Cookie.remove('userInfo')
+    return {
+        type:actions.GET_LOG_OUT,
+
+    }
+}
+
+
+export const checkExpiration = (expireTime) => {
+    return dispatch => {
+        setTimeout(() => {
+            dispatch(GetLogOut());
+            
+        }, expireTime);
+    }
+}
+
 
 export const LoginFailed = (error) => {
     return {
@@ -21,25 +39,16 @@ export const LoginFailed = (error) => {
 }
 
 
-
 export const UserLogin = (email, password) => {
    
     return async dispatch => {
 
-        // try {
-        //     const {data} = await Axios.post('https://redux-backend.herokuapp.com/api/users/login', {email, password});
-        //     console.log(data);
-        //     dispatch(LoginSuccess(data))
-        //     Cookie.set('userInfo', JSON.stringify(data))
-        // } catch (error) {
-        //     console.log(error);
-        //     dispatch(LoginFailed(error))
-        // }
-
         await Axios.post('http://localhost:5000/api/users/login', {email, password})
         .then((res) => {
-            // console.log(res);
-            dispatch(LoginSuccess(res.data))
+            console.log(res); // return id, name, email, isAdmin, token 
+            dispatch(LoginSuccess(res.data))  
+            dispatch(checkExpiration(20000))  // 86400000 
+            // console.log("login success");
             Cookie.set('userInfo', JSON.stringify(res.data))
         }).catch((error) => {
             // console.log(error.response);
