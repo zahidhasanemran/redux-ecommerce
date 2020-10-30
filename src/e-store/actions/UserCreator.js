@@ -36,7 +36,7 @@ export const UserLogin = (email, password) => {
         //     dispatch(LoginFailed(error))
         // }
 
-        await Axios.post('http://localhost:500/users/login', {email, password})
+        await Axios.post('http://localhost:5000/users/login', {email, password})
         .then((res) => {
             // console.log(res);
             dispatch(LoginSuccess(res.data))
