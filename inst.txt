@@ -33,6 +33,10 @@ signup page
 -> improve design 
 -> optimization
 -> responsive 
+-> Create order
+-> Order page 
+-> Auth fix 
+
 single product to scroll top 
 
 
