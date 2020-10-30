@@ -26,7 +26,7 @@ export const RegisterReq = (name, email, password) => {
    
     return async dispatch => {
 
-        await Axios.post('https://redux-backend.herokuapp.com/api/users/register', {name, email, password})
+        await Axios.post('http://localhost:5000/api/users/register', {name, email, password})
         .then((res) => {
             // console.log(res);
             dispatch(RegisterSuccess(res.data))
