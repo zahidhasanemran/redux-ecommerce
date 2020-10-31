@@ -1,0 +1,17 @@
+.commingSoon{
+    color: inherit;
+    text-align: center;
+    padding: 50px 0px;
+}
+.commingSoon h5{}
+
+.img_wrapper{
+    width: 30%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.img_wrapper img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
