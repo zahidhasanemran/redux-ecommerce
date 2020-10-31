@@ -51,7 +51,7 @@ const OrderPage = (props) => {
                                 }
                             </div>
                         </div>
-                        <div className={style.list}>
+                        <div className={`${style.list} mb-5`}>
                             <div>
                                 <h3>Payment Method </h3>
                             </div>

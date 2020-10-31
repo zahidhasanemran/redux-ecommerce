@@ -30,7 +30,7 @@ signup page
 -> placehoder loading 
 -> error hoc
 -> modal hoc 
--> improve design 
+improve design 
 -> optimization
 -> responsive 
 single product to scroll top 

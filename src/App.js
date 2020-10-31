@@ -14,6 +14,7 @@ import Register from './Pages/Auth/Register/Register'
 import Checkout from './Pages/Auth/Checkout/Checkout';
 import Payment from './Pages/Auth/Payment/Payment';
 import OrderPage from './Pages/Order/OrderPage';
+import CommingSoon from './component/CommingSoon/CommingSoon';
 
 
 
@@ -40,6 +41,8 @@ function App(props) {
           <Route path="/register" component={Register} />
           <Route path="/shipping" component={Checkout} />
           <Route path="/payment" component={Payment} />
+          <Route path="/about" component={CommingSoon} />
+          <Route path="/contact" component={CommingSoon} />
           <Route path="/place-order" component={OrderPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/single/:id" component={SingleRroductPage} />
