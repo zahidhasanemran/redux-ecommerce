@@ -15,7 +15,6 @@ import Checkout from './Pages/Auth/Checkout/Checkout';
 import Payment from './Pages/Auth/Payment/Payment';
 import OrderPage from './Pages/Order/OrderPage';
 import CommingSoon from './component/CommingSoon/CommingSoon';
-import ProductPlaceholder from './component/Placeholder/ProductPlaceholder/ProductPlaceholder';
 
 
 
@@ -45,7 +44,6 @@ function App(props) {
           <Route path="/about" component={CommingSoon} />
           <Route path="/contact" component={CommingSoon} />
           <Route path="/place-order" component={OrderPage} />
-          {/* <Route path="/placeholder" component={ProductPlaceholder} /> */}
           <Route path="/cart" component={CartPage} /> 
           <Route path="/single/:id" component={SingleRroductPage} />
         </Switch>
