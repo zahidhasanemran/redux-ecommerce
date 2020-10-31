@@ -12,7 +12,8 @@ const OrderDetails = (props) => {
     const {count} = pros
 
     const checkOutHandle = () => {
-        props.history.push('/login?redirect=shipping')
+        props.history.push('/shipping')
+        // props.history.push('/login?redirect=shipping')
     }
     const placeOrderHandle = () => {
         console.log("order done");
