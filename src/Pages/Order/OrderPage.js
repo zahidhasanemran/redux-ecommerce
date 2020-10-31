@@ -51,7 +51,7 @@ const OrderPage = (props) => {
                                 }
                             </div>
                         </div>
-                        <div className={`${style.list} mb-5`}>
+                        <div className={style.list}>
                             <div>
                                 <h3>Payment Method </h3>
                             </div>
@@ -59,7 +59,7 @@ const OrderPage = (props) => {
                                 <p>{paymentMethod ? paymentMethod : ''} </p>
                             </div>
                         </div>
-                        <div className={style.list}>
+                        <div className={`${style.list} mb-5`}>
                             <div>
                                 <h3>Cart Items </h3>
                             </div>

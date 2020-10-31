@@ -30,9 +30,11 @@ signup page
 -> placehoder loading 
 -> error hoc
 -> modal hoc 
-improve design 
 -> optimization
+-> add slider 
+-> count down timer  
 -> responsive 
+improve design 
 single product to scroll top 
 
 
