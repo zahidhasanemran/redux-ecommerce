@@ -50,6 +50,9 @@ body{
     transition: all .3s linear;
 }
 
+.defBtn:focus{
+    outline: none;
+}
 .defBtn:hover{
 	transform: translateY(2px);
 	box-shadow: 0 3px 10px rgba(25,17,34,.05);
