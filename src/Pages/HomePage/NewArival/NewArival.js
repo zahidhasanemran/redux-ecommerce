@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import SlicArrow from '../../../component/ui/favIcon/SlicArrow/SlicArrow'
 import { connect } from 'react-redux';
+import ProductPlaceholder from '../../../component/Placeholder/ProductPlaceholder/ProductPlaceholder';
 
 
 
@@ -14,7 +15,15 @@ class NewArival extends Component {
 
     render() {
 
-        
+        let placeCo = 6;
+
+        const lodingPlaceholder = this.props.loading && [...Array(placeCo).keys()].map(pc => {
+            return <div className={style.single_slide} key={pc}>
+                        <div className={`${style.single_product} sidebar_two`}>
+                            <ProductPlaceholder/>
+                        </div>
+                    </div>
+        })
 
         function PrevButton({ onClick }) {
             return <button onClick={onClick} className={style.slickprev} > <SlicArrow /> </button>;
@@ -47,7 +56,7 @@ class NewArival extends Component {
             </div>
             <div className={style.newArrivalSlider}>
             <Slider {...settings}>
-
+                {lodingPlaceholder}
                 {
                     this.props.newArriaval.map(prod => {
                         return(
@@ -78,6 +87,7 @@ class NewArival extends Component {
 const mapStateToProps = state => {
     return {
         newArriaval: state.ProductReducer.newProducts,
+        loading: state.ProductReducer.loading,
     }
 }
 
