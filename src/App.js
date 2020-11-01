@@ -5,7 +5,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Layout from './container/layout/Layout.js'
 import HomePage from './Pages/HomePage/HomePage';
 // import ShopPage from './Pages/ShopPage/ShopPage';
-import SingleRroductPage from './Pages/SingleProductPage/SingleRroductPage';
+// import SingleRroductPage from './Pages/SingleProductPage/SingleRroductPage';
 import { useDispatch } from 'react-redux';
 import { ProductRequested } from './e-store/actions';
 import CartPage from './Pages/CartPage/CartPage';
@@ -29,6 +29,7 @@ function App(props) {
   const lazyShop = lazy(()=> import('./Pages/ShopPage/ShopPage'));
   const lazyLogin = lazy(() => import('./Pages/Auth/Login/Login'));
   const lazyRegister = lazy(() => import('./Pages/Auth/Register/Register'));
+  const lazySingleProduct = lazy(() => import('./Pages/SingleProductPage/SingleRroductPage'))
 
 
   return (
@@ -43,12 +44,12 @@ function App(props) {
           <Route path="/contact" component={CommingSoon} />
           <Route path="/place-order" component={OrderPage} />
           <Route path="/cart" component={CartPage} /> 
-          <Route path="/single/:id" component={SingleRroductPage} />
-          
+
           <Suspense fallback="Loading...">
             <Route path="/shop" component={lazyShop} />
             <Route path="/login" component={lazyLogin} />
             <Route path="/register" component={lazyRegister} />
+            <Route path="/single/:id" component={lazySingleProduct} />  
           </Suspense>
 
           

@@ -30,15 +30,16 @@ signup page
 placehoder loading 
 active class added on link  
 optimization
+improve design 
+single product to scroll top 
 
+-> animation 
+-> responsive 
 -> error hoc
 -> modal hoc 
 -> add slider 
 -> count down timer  
--> responsive 
--> animation 
 
-improve design 
-single product to scroll top 
+
 
 
