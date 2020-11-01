@@ -18,7 +18,7 @@ const Login = (props) => {
 
     const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
     useEffect(() => {
-        console.log(props.location);
+        // console.log(props.location);
         if (email) {
           props.history.push(redirect);
         }

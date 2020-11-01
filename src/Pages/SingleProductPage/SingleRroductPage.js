@@ -22,7 +22,7 @@ const SingleRroductPage = (props) => {
     const relatedProduct = useSelector(state => state.ProductReducer.relatedProduct);
     const relatedProFilter = useSelector(state => state.ProductReducer.relatedProFilter);
 
-    console.log(relatedProFilter);
+    // console.log(relatedProFilter);
 
     let detailsProduct = useSelector(state => state.ProductReducer.detailsProd);
     let category = detailsProduct.map(x => x.category).toString();

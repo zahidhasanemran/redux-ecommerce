@@ -40,7 +40,7 @@ class BestShop extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state.ProductReducer);
+    // console.log(state.ProductReducer);
     return {
         bestFilterProduct: state.ProductReducer.bestFiltered,
         loading: state.ProductReducer.loading

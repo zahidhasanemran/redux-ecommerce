@@ -28,14 +28,15 @@ checkout page
 login page 
 signup page 
 placehoder loading 
+active class added on link  
+optimization
+
 -> error hoc
 -> modal hoc 
--> optimization
 -> add slider 
 -> count down timer  
 -> responsive 
 -> animation 
--> active class added on link  
 
 improve design 
 single product to scroll top 

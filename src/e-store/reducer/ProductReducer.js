@@ -226,8 +226,8 @@ const productReducer = (state = productState, action) => {
                 tempInCart.push(tc);
             });
             let cartInTotalPrice = action.cart.map(cc => cc.total).reduce((total, current) => total + current);
-            console.log(tempInCart);
-            console.log(state.products);
+            // console.log(tempInCart);
+            // console.log(state.products);
             return {
                 ...state,
                 ...state.cart,
