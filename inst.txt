@@ -34,7 +34,9 @@ placehoder loading
 -> add slider 
 -> count down timer  
 -> responsive 
+-> animation 
 -> active class added on link  
+
 improve design 
 single product to scroll top 
 

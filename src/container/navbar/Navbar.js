@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import classes from './Navbar.module.css';
 
 
@@ -37,10 +37,10 @@ const Navbar = () => {
                                 navItems.map((nav, index) => {
                                     
                                     if(nav.link === "/login" && isAuth === true){
-                                        return <li key={index} className="list-inline-item"><Link to="/logout" exact={(nav.link==="/").toString()} className="d-block"> Logout </Link></li>
+                                        return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to="/logout" exact={(nav.link==="/").toString()} className="d-block"> Logout </NavLink></li>
                                     }
 
-                                    return <li key={index} className="list-inline-item"><Link to={nav.link} exact={(nav.link==="/").toString()} className="d-block active"> {nav.name} </Link></li>
+                                    return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to={nav.link} exact={(nav.link==="/").toString()} className="d-block active"> {nav.name} </NavLink></li>
                                 })
                             }
                             
