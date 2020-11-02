@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Topbar from '../../component/header/topbar/Topbar';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import Navbar from '../navbar/Navbar';
 
 
@@ -14,7 +14,7 @@ function Layout(props) {
             <Topbar />
             <Navbar />
             {props.children}
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 }
