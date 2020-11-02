@@ -4,7 +4,8 @@ import style from './App.module.css';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Layout from './container/layout/Layout.js'
 import HomePage from './Pages/HomePage/HomePage';
-import SingleRroductPage from './Pages/SingleProductPage/SingleRroductPage';
+// import ShopPage from './Pages/ShopPage/ShopPage';
+// import SingleRroductPage from './Pages/SingleProductPage/SingleRroductPage';
 import { useDispatch } from 'react-redux';
 import { ProductRequested } from './e-store/actions';
 import CartPage from './Pages/CartPage/CartPage';
@@ -26,6 +27,7 @@ function App({location}) {
   const lazyShop = lazy(()=> import('./Pages/ShopPage/ShopPage'));
   const lazyLogin = lazy(() => import('./Pages/Auth/Login/Login'));
   const lazyRegister = lazy(() => import('./Pages/Auth/Register/Register'));
+  const lazySingleProduct = lazy(() => import('./Pages/SingleProductPage/SingleRroductPage'))
 
 
   return (
@@ -58,10 +60,10 @@ function App({location}) {
                 
               </Switch>
 
+
               <Footer></Footer>
             </div>
-        </CSSTransition>
-      </TransitionGroup>
+       
       </Layout>
     </div>
   );
