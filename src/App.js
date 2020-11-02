@@ -41,6 +41,7 @@ function App({location}) {
               
               
               <Switch location={location}>
+
                 <Route path="/" exact component={HomePage} /> 
                 <Route path="/shipping" exact component={Checkout} />
                 <Route path="/payment" exact component={Payment} />
@@ -48,20 +49,21 @@ function App({location}) {
                 <Route path="/contact" exact component={CommingSoon} />
                 <Route path="/place-order" exact component={OrderPage} />
                 <Route path="/cart" exact component={CartPage} /> 
-                <Route path="/single/:id" component={SingleRroductPage} />
                 
                 <Suspense fallback="Loading...">
                   <Route path="/shop" exact component={lazyShop} />
                   <Route path="/login" exact component={lazyLogin} />
                   <Route path="/register" exact component={lazyRegister} />
+                  <Route path="/single/:id" component={lazySingleProduct} />
                 </Suspense>
                 
               </Switch>
 
-
               <Footer></Footer>
+
             </div>
-       
+          </CSSTransition>
+        </TransitionGroup>
       </Layout>
     </div>
   );
