@@ -4,13 +4,9 @@ import './App.module.css';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Layout from './container/layout/Layout.js'
 import HomePage from './Pages/HomePage/HomePage';
-// import ShopPage from './Pages/ShopPage/ShopPage';
-// import SingleRroductPage from './Pages/SingleProductPage/SingleRroductPage';
 import { useDispatch } from 'react-redux';
 import { ProductRequested } from './e-store/actions';
 import CartPage from './Pages/CartPage/CartPage';
-// import Login from './Pages/Auth/Login/Login';
-// import Register from './Pages/Auth/Register/Register'
 import Checkout from './Pages/Auth/Checkout/Checkout';
 import Payment from './Pages/Auth/Payment/Payment';
 import OrderPage from './Pages/Order/OrderPage';
