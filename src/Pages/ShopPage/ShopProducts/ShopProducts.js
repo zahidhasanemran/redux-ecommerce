@@ -5,7 +5,7 @@ import SectionTitle from '../../../component/SectionTitle/SectionTitle'
 import SingleProduct from '../../../component/singleProduct/SingleProduct'
 import { useSelector } from 'react-redux';
 import ProductPlaceholder from '../../../component/Placeholder/ProductPlaceholder/ProductPlaceholder';
-
+import { Transition } from 'react-transition-group';
 
 
 const ShopProducts = () => {
@@ -20,27 +20,67 @@ const ShopProducts = () => {
             <ProductPlaceholder />
         </div>
     })
+
+
+    const duration = 600;
+
+    const defaultStyle = {
+        transition: `right ${duration}ms ease-in-out`,
+            right: '-20px',
+            position: 'relative'
+        }
+    
+        const transitionStyles = {
+            entering: { 
+                right: '-20px'
+            },
+            entered:  { 
+                right: '0px'
+            },
+            exiting:  { 
+                right: '-10px'
+            },
+            exited:  { 
+                right: '-20px'
+            },
+        };
     
 
     return (
-        <div className={style.ShopProducts}>
-            <SectionTitle sectionTitle="Shop" />
-            <div className={`${style.Products} row`}>
-                {lodingPlaceholder}
-                {shopFilter.map(pro => {
-                    return (
-                        <div className="col-lg-4" key={pro.id}>
-                            <SingleProduct 
-                                img={pro.image}
-                                title={pro.title}
-                                price={pro.price}
-                                id={pro.id}
-                            />
+
+        <Transition in={!loading} timeout={duration} mountOnEnter unmountOnExit>
+            {state => (
+                <div className="" style={{
+                    ...defaultStyle,
+                    ...transitionStyles[state]
+                }}>
+                    <div className={style.ShopProducts}>
+                        <SectionTitle sectionTitle="Shop" />
+                        <div className={`${style.Products} row`}>
+                            {lodingPlaceholder}
+                            {shopFilter.map(pro => {
+                                return (
+                                    <div className="col-lg-4" key={pro.id}>
+                                        <SingleProduct 
+                                            img={pro.image}
+                                            title={pro.title}
+                                            price={pro.price}
+                                            id={pro.id}
+                                        />
+                                    </div>
+                                )
+                            })}
                         </div>
-                    )
-                })}
-            </div>
-        </div>
+                    </div>
+                </div>
+
+            )}
+        </Transition>
+
+
+
+
+        
     );
 };
 

@@ -39,6 +39,7 @@ single product to scroll top
 -> modal hoc 
 -> add slider 
 -> count down timer  
+-> login page animation 
 
 
 

@@ -4,7 +4,7 @@ import ShopSidebar from './ShopSidebar/ShopSidebar';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SetFilterProduct } from '../../e-store/actions/index';
-import { Transition } from 'react-transition-group';
+
 
 
 
@@ -28,47 +28,21 @@ const ShopPage = () => {
     }, [loading]);
 
     
-    const duration = 1000;
-
-    const defaultStyle = {
-    transition: `opacity ${duration}ms ease-in-out`,
-        opacity: 0,
-    }
-
-    const transitionStyles = {
-        entering: { 
-            opacity: 1
-        },
-        entered:  { 
-            opacity: 1
-        },
-        exiting:  { 
-            opacity: 0
-        },
-        exited:  { 
-            opacity: 0
-        },
-    };
+    
 
 
     return (
-        <Transition in={!loading} timeout={duration} mountOnEnter unmountOnExit>
-            {state => (
-                <div className="container" style={{
-                    ...defaultStyle,
-                    ...transitionStyles[state]
-                }}>
-                    <div className="row">
-                        <div className="col-lg-3">
-                            <ShopSidebar />
-                        </div>
-                        <div className="col-lg-9">
-                            <ShopProducts/>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </Transition>
+        <div className="container">
+            <div className="row">
+            <div className="col-lg-3">
+                <ShopSidebar />
+            </div>
+            <div className="col-lg-9">
+                <ShopProducts/>
+            </div>
+        </div>
+        </div>
+                
     );
 };
 
