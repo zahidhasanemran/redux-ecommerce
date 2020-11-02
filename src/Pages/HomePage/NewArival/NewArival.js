@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 import SlicArrow from '../../../component/ui/favIcon/SlicArrow/SlicArrow'
 import { connect } from 'react-redux';
 import ProductPlaceholder from '../../../component/Placeholder/ProductPlaceholder/ProductPlaceholder';
-
+import { Transition } from 'react-transition-group';
 
 
 class NewArival extends Component {
@@ -49,35 +49,76 @@ class NewArival extends Component {
             
         };
 
+
+        const duration = 500;
+
+        const defaultStyle = {
+        transition: `opacity ${duration}ms ease-in-out`,
+            opacity: 0,
+        }
+
+        const transitionStyles = {
+            entering: { 
+                opacity: 1
+            },
+            entered:  { 
+                opacity: 1
+            },
+            exiting:  { 
+                opacity: 0
+            },
+            exited:  { 
+                opacity: 0
+            },
+        };
+
         return (
-            <div className={`${style.newarrival_section} mt-4`}>
-            <div className="section_heading pb-5 pt-4 pl-md-3 pr-md-5">
-                <SectionTitle sectionTitle="New Arrivals" /> 
-            </div>
-            <div className={style.newArrivalSlider}>
-            <Slider {...settings}>
-                {lodingPlaceholder}
-                {
-                    this.props.newArriaval.map(prod => {
-                        return(
-                            <div className={style.single_slide} key={prod.id}>
-                                <div className={`${style.single_product} sidebar_two`}>
-                                    <SingleProduct
-                                        img={prod.image}
-                                        title={prod.title}
-                                        price={prod.price}
-                                        id={prod.id}
-                                    />
-                                </div>
+
+            <Transition in={!this.props.loading} timeout={duration} mountOnEnter unmountOnExit>
+                {state => (
+                    <div className="container px-0" style={{
+                        ...defaultStyle,
+                        ...transitionStyles[state],
+                        
+                    }}>
+                        
+                        <div className={`${style.newarrival_section} mt-4`}>
+                            <div className="section_heading pb-5 pt-4 pl-md-3 pr-md-5">
+                                <SectionTitle sectionTitle="New Arrivals" /> 
                             </div>
-                        )
-                    })
-                }
+                            <div className={style.newArrivalSlider}>
+                            <Slider {...settings}>
+                                {lodingPlaceholder}
+                                {
+                                    this.props.newArriaval.map(prod => {
+                                        return(
+                                            <div className={style.single_slide} key={prod.id}>
+                                                <div className={`${style.single_product} sidebar_two`}>
+                                                    <SingleProduct
+                                                        img={prod.image}
+                                                        title={prod.title}
+                                                        price={prod.price}
+                                                        id={prod.id}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </Slider>
+                            </div>
+                        </div>
+
+                    </div>
+                )}
+            </Transition>
 
 
-            </Slider>
-            </div>
-        </div>
+
+
+
+
+            
 
         );
     }

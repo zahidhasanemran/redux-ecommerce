@@ -41,10 +41,10 @@ const OrderPage = (props) => {
                                 {
                                    shipping && 
                                         <ul>
-                                            <li>Address: {shipping.address} </li>
-                                            <li>City: {shipping.city} </li>
-                                            <li>Postal Code: {shipping.pcode} </li>
-                                            <li>Country: {shipping.country} </li>
+                                            <li><strong>Address:</strong> {shipping.address} </li>
+                                            <li><strong>City:</strong> {shipping.city} </li>
+                                            <li><strong>Postal Code:</strong> {shipping.pcode} </li>
+                                            <li><strong>Country:</strong> {shipping.country} </li>
                                         </ul>
                                         
                                 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
 
 
@@ -19,7 +19,7 @@ function Category({classes, proFilter}) {
     return (
         categories.map((cat, index) => {
             return <li className={classes} key={index}>
-                <Link onClick={(e) => dispatching(cat, e)} to=""> {cat} </Link>
+                <NavLink onClick={(e) => dispatching(cat, e)} to=""> {cat} </NavLink>
             </li>
         })
     );

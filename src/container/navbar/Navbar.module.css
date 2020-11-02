@@ -1,6 +1,7 @@
 .menu_bar{
-	border-top: 1px solid  #d6fac3;
-	border-bottom: 1px solid  #d6fac3;
+	/* border-top: 1px solid  #ddd; */
+	/* border-bottom: 1px solid  #d6fac3; */
+	box-shadow: 0 3px 10px rgba(25,17,34,.05);
 }
 .menu_bar ul li{
 	transition: all .3s linear;
