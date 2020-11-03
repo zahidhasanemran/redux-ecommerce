@@ -8,8 +8,8 @@ const Loading = () => {
         <div className="container">
             <div className="row">
                 <div className="Loading">
-                    <div class="loadingio-spinner-spinner-wve9lpf407i">
-                        <div class="ldio-xm2u2to7urk">
+                    <div className="loadingio-spinner-spinner-wve9lpf407i">
+                        <div className="ldio-xm2u2to7urk">
                             <div></div>
                             <div></div>
                             <div></div>

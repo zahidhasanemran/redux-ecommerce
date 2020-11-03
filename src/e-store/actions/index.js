@@ -31,12 +31,14 @@ export {
 
 
 export {
-    UserLogin
+    LoginAuth,
+    LogOut,
+    authCheckState
 } from './UserCreator'
 
 
 export {
-    RegisterReq
+    RegisterAuth
 } from './RegisterCreator'
 
 export {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import style from '../Login/Login.module.css'
 import Button from '../../../component/ui/button/Button/Button'
 import authImg from '../../../assets/img/auth.svg';
-import {RegisterReq} from '../../../e-store/actions/index'
+import {RegisterAuth} from '../../../e-store/actions/index'
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -11,20 +11,20 @@ const Register = (props) => {
     const dispatch = useDispatch();
     const RegisterUser = useSelector(state => state.RegisterReducer)
     // console.log(RegisterUser);
-    const {loading, regInfo: {name, email, isAdmin}, error, isRegistered} = RegisterUser;
+    // const {loading, regInfo: {name, email, isAdmin}, error, isRegistered} = RegisterUser;
     // console.log(email, name);
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(RegisterReq(Username, Useremail, Userpassword))
+        dispatch(RegisterAuth(Username, Useremail, Userpassword))
         console.log("SUBMIT FORM ");
     }
-    const redirect = props.location.search ? props.location.search.split("=")[1] : '/' ;
+    // const redirect = props.location.search ? props.location.search.split("=")[1] : '/' ;
     // console.log(props.location);
-    useEffect(()=>{
-        if(email){
-            props.history.push(redirect);
-        }
-    }, [email])
+    // useEffect(()=>{
+    //     if(email){
+    //         props.history.push(redirect);
+    //     }
+    // }, [email])
 
     
 
@@ -65,9 +65,9 @@ const Register = (props) => {
 
                 <p className="pt-4"><small>Already Have an account?</small></p>
 
-                <div className={`${style.single_form} text-center`}>
+                {/* <div className={`${style.single_form} text-center`}>
                     <Button title="Login" link={redirect === '/' ? 'login' : 'login/redirect='+redirect} />
-                </div>
+                </div> */}
 
 
             </form>

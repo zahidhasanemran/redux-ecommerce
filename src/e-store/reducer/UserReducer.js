@@ -3,13 +3,9 @@ import * as acitonTypes from '../actions/actionConst';
 
 const initialUser = {
     loading: false,
-    error: '',
-    userInfo: {
-        id: '',
-        name: '',
-        email: '',
-        isAdmin: false
-    },
+    error: null,
+    userId: '',
+    token: '',
     isAuth: false
 }
 
@@ -17,17 +13,23 @@ const initialUser = {
 
 const UserReducer = (state = initialUser, action) => {
     switch (action.type) {
+
         case acitonTypes.USER_LOGIN_REQ:
             return{
+                ...state,
                 loading: true,
-                isAuth: false
+                isAuth: false,
+                error: null
             }
             
     
         case acitonTypes.USER_LOGIN_SUCCESS:
             return{
+                ...state,
                 loading: false,
-                userInfo: action.data,
+                token: action.token,
+                userId: action.userId,
+                error: null,
                 isAuth: true
             }
             
@@ -52,10 +54,22 @@ const UserReducer = (state = initialUser, action) => {
     
         case acitonTypes.USER_LOGIN_FAILED:
             return{
+                ...state,
                 loading: false,
                 error: action.error,
                 isAuth: false,
-                userInfo: state.userInfo
+                token: '',
+                userId: ''
+            }
+            
+            
+    
+        case acitonTypes.LOG_OUT:
+            return{
+                ...state,
+                token: '',
+                userId: '',
+                isAuth: false
             }
             
     

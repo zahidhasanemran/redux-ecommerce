@@ -5,7 +5,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Layout from './container/layout/Layout.js'
 import HomePage from './Pages/HomePage/HomePage';
 import { useDispatch } from 'react-redux';
-import { ProductRequested } from './e-store/actions';
+import { authCheckState, ProductRequested } from './e-store/actions';
 import CartPage from './Pages/CartPage/CartPage';
 import Checkout from './Pages/Auth/Checkout/Checkout';
 import Payment from './Pages/Auth/Payment/Payment';
@@ -15,11 +15,14 @@ import ShopPage from './Pages/ShopPage/ShopPage'
 import Loading from './component/Loading/Loading';
 
 
+
+
 function App({location}) {
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(authCheckState());
     dispatch(ProductRequested());
   }, []);
 

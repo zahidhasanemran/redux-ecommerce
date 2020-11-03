@@ -45,6 +45,9 @@ export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED'; 
 
 
+export const LOG_OUT = 'LOG_OUT'; 
+
+
 export const REGISTER_REQ = 'REGISTER_REQ'; 
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'; 
 export const REGISTER_FAILED = 'REGISTER_FAILED'; 

@@ -6,7 +6,7 @@ import iconAcount from '../../../assets/img/icon-account.jpg'
 import cartImg from '../../../assets/img/cart.png'
 import proImg from '../../../assets/img/pro.jpg'
 import { FaSearch } from "react-icons/fa";
-// import {ProductCountLoad} from '../../../e-store/actions/index'
+import {LogOut} from '../../../e-store/actions/index'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const Topbar = () => {
 
     let count = useSelector(state => state.ProductReducer.count)
     const UserInfo = useSelector(state => state.UserReducer)
-    const {error, isAuth, loading, userInfo: {id, email, name, isAdmin}} = UserInfo;
+    const {error, isAuth, loading, } = UserInfo;
     // console.log(isAuth);
 
     return (

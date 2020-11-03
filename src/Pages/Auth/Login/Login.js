@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import style from './Login.module.css';
 import Button from '../../../component/ui/button/Button/Button'
 import authImg from '../../../assets/img/auth.svg';
-import { UserLogin } from '../../../e-store/actions';
+import { LoginAuth } from '../../../e-store/actions/index';
 import { useDispatch, useSelector } from 'react-redux';
+import Loading from '../../../component/Loading/Loading';
 
 
 
@@ -13,31 +14,32 @@ const Login = (props) => {
 
     const dispatch = useDispatch();
     const UserInfo = useSelector(state => state.UserReducer)
-    const {error, isAuth, loading, userInfo: {id, email, name, isAdmin}} = UserInfo;
-    // console.log(name);
-
+    const {error, isAuth, loading} = UserInfo;
     const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
+
+    // console.log(UserInfo);
     useEffect(() => {
-        // console.log(props.location);
-        if (email) {
+        if (isAuth) {
           props.history.push(redirect);
         }
         return () => {
-          //
+        
         };
-      }, [email]);
+      }, [isAuth]);
 
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(UserLogin(useremail, userpassword))
+        dispatch(LoginAuth(useremail, userpassword))
         console.log("SUBMIT FORM ");
     }
 
     const [useremail, setEmail] = useState('')
     const [userpassword, setPassword] = useState('')
 
-    // console.log(email, password);
+    if(loading){
+        return <Loading></Loading>
+    }
 
     return (
         <div className={style.Login}>
@@ -46,8 +48,7 @@ const Login = (props) => {
             </div>
             <form onSubmit={submitHandler}>
                 <div className={style.single_form}>
-                    {loading && <p className="text-cener">Loading ...</p> }
-                    {error && <p className="text-cener"> {error}</p> }
+                    {error && <p className="text-cener"> {error.response.data.error.message}</p> }
                 </div>
 
 

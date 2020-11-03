@@ -32,8 +32,8 @@ active class added on link
 optimization
 improve design 
 single product to scroll top 
+animation 
 
--> animation 
 -> responsive 
 -> error hoc
 -> modal hoc 

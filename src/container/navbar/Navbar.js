@@ -1,16 +1,17 @@
 
 
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {NavLink, withRouter} from 'react-router-dom';
+import { LogOut } from '../../e-store/actions/index';
 import classes from './Navbar.module.css';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     const UserInfo = useSelector(state => state.UserReducer)
-    const {error, isAuth, loading, userInfo: {id, email, name, isAdmin}} = UserInfo;
-    // console.log(isAuth);
+    const { error, isAuth, loading } = UserInfo;
+    const dispatch = useDispatch();
 
     const [navItems, setNavItems] = useState(
         [
@@ -23,6 +24,12 @@ const Navbar = () => {
             {id: 7, name: "Login", link:"/login"},
         ]
     )  
+
+    const LogoutHandler = (e) => {
+        e.preventDefault();
+        dispatch(LogOut())
+        props.history.push("/")
+    }
 
 
 
@@ -37,7 +44,7 @@ const Navbar = () => {
                                 navItems.map((nav, index) => {
                                     
                                     if(nav.link === "/login" && isAuth === true){
-                                        return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to="/logout" exact={(nav.link==="/").toString()} className="d-block"> Logout </NavLink></li>
+                                        return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to="/logout" exact={(nav.link==="/").toString()} className="d-block" onClick={(e) => LogoutHandler(e)}> Logout </NavLink></li>
                                     }
 
                                     return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to={nav.link} exact={(nav.link==="/").toString()} className="d-block active"> {nav.name} </NavLink></li>
@@ -53,4 +60,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default withRouter(Navbar);
