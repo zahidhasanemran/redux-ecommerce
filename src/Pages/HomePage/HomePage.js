@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BestProductFilter, FeaturedProductFilter, NewProductFilter, SetFilterProduct } from '../../e-store/actions';
 import ProductSlider from '../../component/ProductSlider/ProductSlider';
 import Notifier from '../../component/ui/Notifier/Notifier';
+import HomeSlider from './HomeSlider/HomeSlider';
 
 
 
@@ -43,6 +44,7 @@ function HomePage() {
         <Fragment>
             {/* {loading ? <p>loading</p> : <p>done</p> } */}
             {isAuth && <Notifier show={isAuth} text="Successfuly Logged In."></Notifier> }
+                <HomeSlider></HomeSlider>
                 <div className="shop_section_one pt-5">
                     <div className="container">
                         <div className="row">

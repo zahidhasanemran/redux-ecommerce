@@ -5,13 +5,7 @@
     padding: 20px 15px;
     border-radius: 3px;
     position: absolute;
-    right: 0;
+    right: -200px;
     top: 0;
     box-shadow: 0 3px 10px rgba(25,17,34,.05);
-}
-
-.Notifier p{}
-.Notifier p svg{
-    color: green;
-    margin-right: 10px;
 }

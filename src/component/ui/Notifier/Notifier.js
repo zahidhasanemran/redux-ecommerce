@@ -12,22 +12,23 @@ const Notifier = (props) => {
     const duration = 500;
 
         const defaultStyle = {
-        transition: `opacity ${duration}ms ease`,
-            opacity: 0,
+            transition: `right ${duration}ms ease-in-out`,
+            right: '-200px',
+
         }
 
         const transitionStyles = {
             entering: { 
-                opacity: 1
+                right: '-200px'
             },
             entered:  { 
-                opacity: 1
+                right: '0px'
             },
             exiting:  { 
-                opacity: 0
+                right: '-200px'
             },
             exited:  { 
-                opacity: 0
+                right: '-200px'
             },
         };
 
@@ -42,12 +43,12 @@ const Notifier = (props) => {
         <Transition in={show}  timeout={duration} mountOnEnter unmountOnExit>
 
             {state => (
-                    <div className="container px-0" style={{
+                    <div className="container px-0" >
+                        <div className={style.Notifier} onClick={dissmis} style={{
                         ...defaultStyle,
                         ...transitionStyles[state],
                         
                     }}>
-                        <div className={style.Notifier} onClick={dissmis}>
                             <div className="text-right border-bottom">
                                 {/* <p><FaEnvelopeOpen /> </p> */}
                                 <p><FaTimesCircle style={{color: 'red'}}></FaTimesCircle></p>
