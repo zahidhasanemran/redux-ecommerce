@@ -23,7 +23,7 @@ function AddtoCart({id}) {
     
 
     return (
-        <Link onClick={(e) => addToCART(e,id)} className={classes.addtocart}> Add To Cart </Link>
+        <Link onClick={(e) => addToCART(e,id)} className={classes.addtocart} to="/" > Add To Cart </Link>
     );
 }
 

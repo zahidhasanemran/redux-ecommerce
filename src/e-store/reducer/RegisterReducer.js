@@ -6,9 +6,9 @@ const RegisterData = {
     error: '',
     regInfo: {
         id: '',
-        name: '',
         email: '',
-        isAdmin: false
+        token: '',
+
     },
     isRegistered: false
 }
@@ -27,8 +27,12 @@ const RegisterReducer = (state = RegisterData, action) => {
         case acitonTypes.REGISTER_SUCCESS:
             return{
                 loading: false,
-                regInfo: action.data,
-                isAuth: true
+                regInfo: {
+                    id: action.data.localId,
+                    email: action.data.email,
+                    token: action.data.idToken
+                },
+                isRegistered: true
             }
             
             
@@ -37,8 +41,7 @@ const RegisterReducer = (state = RegisterData, action) => {
             return{
                 loading: false,
                 error: action.error,
-                isRegistered: false,
-                regInfo: state.regInfo
+                isRegistered: false
             }
             
     

@@ -5,6 +5,8 @@ import authImg from '../../../assets/img/auth.svg';
 import { LoginAuth } from '../../../e-store/actions/index';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../../component/Loading/Loading';
+import Notifier from '../../../component/ui/Notifier/Notifier';
+
 
 
 
@@ -15,6 +17,7 @@ const Login = (props) => {
     const dispatch = useDispatch();
     const UserInfo = useSelector(state => state.UserReducer)
     const {error, isAuth, loading} = UserInfo;
+
     const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
 
     // console.log(UserInfo);
@@ -48,7 +51,9 @@ const Login = (props) => {
             </div>
             <form onSubmit={submitHandler}>
                 <div className={style.single_form}>
-                    {error && <p className="text-cener"> {error.response.data.error.message}</p> }
+                    {/* {error && <p className="text-cener"> {error.message}</p> } */}
+                    {error && <Notifier show={error.message}>{error.message}</Notifier> }
+                    {/* {isAuth && <Notifier show={isAuth} text="Successfuly Logged In."></Notifier> } */}
                 </div>
 
 

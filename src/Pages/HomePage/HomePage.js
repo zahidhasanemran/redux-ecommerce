@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BestProductFilter, FeaturedProductFilter, NewProductFilter, SetFilterProduct } from '../../e-store/actions';
 import ProductSlider from '../../component/ProductSlider/ProductSlider';
+import Notifier from '../../component/ui/Notifier/Notifier';
 
 
 
@@ -17,6 +18,7 @@ function HomePage() {
     const products = useSelector(state => state.ProductReducer.products);
     const loading = useSelector(state => state.ProductReducer.loading);
     const featuredFiltered = useSelector(state => state.ProductReducer.featuredFiltered);
+    const isAuth = useSelector(state => state.UserReducer.isAuth);
     // console.log(loading);
 
     
@@ -40,6 +42,7 @@ function HomePage() {
     return (
         <Fragment>
             {/* {loading ? <p>loading</p> : <p>done</p> } */}
+            {isAuth && <Notifier show={isAuth} text="Successfuly Logged In."></Notifier> }
                 <div className="shop_section_one pt-5">
                     <div className="container">
                         <div className="row">

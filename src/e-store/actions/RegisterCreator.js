@@ -6,6 +6,7 @@ import Cookie from 'js-cookie'
 
 
 export const RegisterSuccess = (data) => {
+    // console.log(data);
     return {
         type: actions.REGISTER_SUCCESS,
         data
@@ -42,7 +43,7 @@ export const RegisterAuth = (name, email, password) => {
         .then((res) => {
             console.log(res);
             dispatch(RegisterSuccess(res.data))
-            Cookie.set('userInfo', JSON.stringify(res.data))
+            // Cookie.set('userInfo', JSON.stringify(res.data))
         }).catch((error) => {
             console.log(error);
             dispatch(RegisterFailed(error))

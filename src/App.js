@@ -13,6 +13,8 @@ import OrderPage from './Pages/Order/OrderPage';
 import CommingSoon from './component/CommingSoon/CommingSoon';
 import ShopPage from './Pages/ShopPage/ShopPage'
 import Loading from './component/Loading/Loading';
+// import Notifier from './component/ui/Notifier/Notifier';
+import MobileMenu from './component/ui/MobileMenu/MobileMenu.js';
 
 
 
@@ -46,6 +48,7 @@ function App({location}) {
           <Route path="/cart" exact component={CartPage} /> 
           <Route path="/shop" exact component={ShopPage} /> 
           <Route path="/loading" exact component={Loading} /> 
+          <Route path="/menu" exact component={MobileMenu} /> 
           
           <Suspense fallback={<Loading />}>
             {/* <Route path="/shop" exact component={lazyShop} /> */}

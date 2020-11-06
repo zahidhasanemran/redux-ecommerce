@@ -12,7 +12,7 @@ class BestShop extends Component {
         let placeCo = 6;
 
         const lodingPlaceholder = this.props.loading && [...Array(placeCo).keys()].map(pc => {
-            return <div className={`${style.single_product} col-md-4 sidebar_two`} key={pc}>
+            return <div className={`${style.single_product} col-lg-4 col-md-6 sidebar_two`} key={pc}>
                 <ProductPlaceholder />
             </div>
         })
@@ -23,7 +23,7 @@ class BestShop extends Component {
                 {
                     this.props.bestFilterProduct.map(prod => {
                         return(
-                            <div className={`${style.single_product} col-md-4 sidebar_two`} key={prod.id}>
+                            <div className={`${style.single_product} col-lg-4 col-md-6 sidebar_two`} key={prod.id}>
                                 <SingleProduct
                                     img={prod.image}
                                     title={prod.title}

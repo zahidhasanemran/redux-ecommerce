@@ -1,0 +1,51 @@
+
+.menu_title:focus{
+    outline: 0;
+}
+.menu_title:hover p,
+.menu_title:hover p svg{
+    color: #fff;
+}
+.menu_title:hover{
+    background: rgb(114, 231, 98);
+    color: #fff;
+}
+.menu_title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    padding: 6px 10px;
+    color: #333;
+    transition: all .3s ease;
+    /* border-bottom: 1px solid rgb(243, 242, 242); */
+}
+.menuactive{
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    z-index: 9;
+    left: 0px;
+}
+.signle_menu {
+    color: initial;
+}
+.signle_menu button{
+    color: #333;
+}
+.signle_menu a{
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+    /* border-bottom: 1px solid #ddd; */
+}
+.signle_menu .menuList{
+    overflow: hidden;
+    transition: max-height .6s ease;
+    padding-left: 15px!important;
+}
+.menuList li{
+    padding: 5px;
+}

@@ -11,6 +11,7 @@
     border-top: .3rem #ebebebc2 solid;
     color: #000;
     flex: 1 1;
+    text-align: center;
 }
 
 .CheckoutSteps > div.active{

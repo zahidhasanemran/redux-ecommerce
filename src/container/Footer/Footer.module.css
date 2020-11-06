@@ -38,6 +38,9 @@
 	padding: 8px 15px;
 	width: 70%;
 }
+
+
+
 .social {
 	margin-top: 10px;
 }
@@ -64,4 +67,16 @@ footer{
 }
 footer p{
 	color: #ddd;
+}
+
+
+
+
+@media(max-width: 425px){
+	.paymentFooter{
+		margin: 20px 0px!important;
+	}
+	.socialLinkClass{
+		text-align: center;
+	}
 }

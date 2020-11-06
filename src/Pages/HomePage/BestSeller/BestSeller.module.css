@@ -4,3 +4,8 @@
 .best_heading{
     font-family: inherit;
 }
+@media(max-width: 425px){
+    .item_filters{
+        margin: 15px 0px 0px 15px!important;
+    }
+}

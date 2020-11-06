@@ -1,5 +1,6 @@
 .Login{
     width: 450px;
+    max-width: 100%;
     margin: 50px auto;
     composes: shadow from '../../../App.module.css';
     background: #fff;
@@ -21,4 +22,11 @@
     width: 100%;
     background: #edf6ff;
     padding: 8px 10px;
+}
+
+@media(max-width: 425px){
+    .Login{
+        width: 400px;
+        max-width: 100%;
+    }
 }

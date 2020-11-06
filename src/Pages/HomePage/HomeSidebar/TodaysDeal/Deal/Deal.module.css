@@ -3,6 +3,8 @@
     padding: 15px;
 	position: relative;
 	transition: all .3s linear;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
 }
 .sidebar_two .img_box img{
     transition: all .3s linear;
@@ -99,4 +101,27 @@
 }
 .hover_two li:hover p{
 	visibility: visible;
+}
+
+
+@media(max-width: 1024px){
+    .counter li p{
+		line-height: 15px!important;
+	}
+}
+
+
+@media(width: 768px){
+    .counter li{
+		display: flex;
+		width: auto;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4px 5px;
+	}
+    .counter li p,
+    .counter li span{
+		font-size: 10px;
+		margin-right: 5px;
+	}
 }

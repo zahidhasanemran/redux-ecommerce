@@ -44,6 +44,20 @@ class NewArival extends Component {
             cssEase: "linear",
             prevArrow: <PrevButton />,
             nextArrow: <NextButton />,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 425,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                },
+            ]
             // nextArrow: <button className="slick-next EMRAN"></button>,
             // prevArrow: <button className="slick-prev"></button>
             

@@ -1,5 +1,10 @@
 .sidebar_one, .sidebar_two{
-    background: #fff;
+	background: #fff;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+}
+.sidebar_one{
+	
 }
 .sidebar_one h2{
 	color: #62a83d;
@@ -10,7 +15,11 @@
 	transition: all .3s linear; */
 }
 
-
+@media(max-width: 768px){
+    .sidebar_one h2{
+		font-size: 18px;
+	}
+}
 
 
 

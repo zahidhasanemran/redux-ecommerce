@@ -90,6 +90,7 @@ export const getDetailsProduct = (products, id) => {
 export const ProductRequested = () => {
     
     return dispatch => {
+        // Axios.get('http://localhost:5000/api/products')
         Axios.get('https://redux-backend.herokuapp.com/api/products')
         .then(res => {
             dispatch(SaveProducts(res.data))

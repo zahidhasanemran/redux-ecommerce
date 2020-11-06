@@ -33,14 +33,14 @@ optimization
 improve design 
 single product to scroll top 
 animation 
+error hoc
+modal hoc 
+Notifier
+responsive 
 
--> responsive 
--> error hoc
--> modal hoc 
+
 -> add slider 
 -> count down timer  
 -> login page animation 
-
-
-
+-> Redmi file edit
 

@@ -5,3 +5,11 @@
     font-family: 'Montserrat', sans-serif;
     line-height: 33px;
 }
+
+
+@media(max-width: 768px){
+    .sectionTitle{
+        padding-left: 15px;
+        font-size: 22px;
+    }
+}

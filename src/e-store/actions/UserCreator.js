@@ -16,6 +16,7 @@ export const LoginSuccess = (token, userId) => {
 
 
 export const LoginFailed = (error) => {
+    // console.log(error);
     return {
         type: actions.USER_LOGIN_FAILED,
         error: error
@@ -79,8 +80,8 @@ export const LoginAuth = (email, password) => {
                 localStorage.setItem('userId', res.data.localId)
                 dispatch(CheckToken(res.data.expiresIn))
             }).catch((error) => {
-
-                dispatch(LoginFailed(error)) // error.response.data.message || 
+                // console.log(error);
+                dispatch(LoginFailed(error)) 
             })
            
         }

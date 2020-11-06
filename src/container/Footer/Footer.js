@@ -72,7 +72,7 @@ class footer extends Component {
                 <div className={style.footer_section}>
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-lg-3 col-md-6">
                                 <div className={style.footer_logo}>
                                     <div><img src={footerLogo} alt="navias" /></div>
                                     <ul className="list-unstyled pt-5">
@@ -89,10 +89,10 @@ class footer extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-lg-6 col-md-12 order-md-12 mt-md-5">
                                 <div className="center_footer">
                                     <div className="row">
-                                        <div className="col-md-4">
+                                        <div className="col-lg-4 col-md-4">
                                             <h4 className="font-weight-bold mb-4">My Account</h4>
                                             <ul className="list-unstyled">
                                                 {this.state.myAcount.map(ma => {
@@ -105,7 +105,7 @@ class footer extends Component {
                                                
                                             </ul>
                                         </div>
-                                        <div className="col-md-4">
+                                        <div className="col-lg-4 col-md-4">
                                             <h4 className="font-weight-bold mb-4">Style Advisor</h4>
                                             <ul className="list-unstyled">
                                                 {this.state.advisor.map(sa => {
@@ -118,7 +118,7 @@ class footer extends Component {
                                                 
                                             </ul>
                                         </div>
-                                        <div className="col-md-4">
+                                        <div className="col-lg-4 col-md-4">
                                             <h4 className="font-weight-bold mb-4">My Account</h4>
                                             <ul className="list-unstyled">
                                                 {this.state.myAcount.map(ma => {
@@ -134,7 +134,7 @@ class footer extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-lg-3 col-md-6">
                                 <div className={style.footer_right}>
                                     <h4 className="font-weight-bold mb-3">Popular Post</h4>
                                     <ul className="list-unstyled">
@@ -152,7 +152,7 @@ class footer extends Component {
                             </div>
                         </div>
                         <div className="row pt-5 pb-5">
-                            <div className="col-md-4 col-xs-12">
+                            <div className="col-lg-4 col-md-12 mb-md-4 col-xs-12">
                                 <form>
                                     <li className={`${style.email_form} media`} >
                                         <input type="email" placeholder="Enter your email address" />
@@ -160,8 +160,8 @@ class footer extends Component {
                                     </li>
                                 </form>
                             </div>
-                            <div className="col-md-4 text-center">
-                                <ul className="list-unstyled">
+                            <div className="col-lg-4 col-md-6 col-sm-12 text-md-left text-center">
+                                <ul className={`${style.paymentFooter} list-unstyled`}>
                                     {this.state.paymentMethod.map(sm => {
                                         return (
                                             <li className="list-inline-item mr-1" key={sm.id}>
@@ -172,8 +172,8 @@ class footer extends Component {
                                     
                                 </ul>
                             </div>
-                            <div className={`${style.social} col-md-4 text-md-right `}>
-                                <ul className="list-unstyled">
+                            <div className={`${style.social} col-lg-4 col-md-6 col-sm-12 text-md-right `}>
+                                <ul className={`${style.socialLinkClass} list-unstyled`}>
 
                                     {this.state.socilMedia.map(smi => {
                                         return(

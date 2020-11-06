@@ -4,6 +4,7 @@
 .header_search input{
 	padding: 7px 30px;
     border-radius: 25px;
+    
 }
 .header_search label i{
 	position: relative;
@@ -20,4 +21,56 @@
 }
 .header_section {
     background: #fff;
+}
+.mobileBars{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media(max-width: 768px){
+    .header_search input{
+        padding: 7px 15px;
+    }
+}
+
+
+@media(max-width: 425px){
+    .header_search input{
+        width: 100%;
+        background: #fff;
+    }
+    .header_search ul li:not(:last-child){
+        margin-right: 0;
+    }
+    .header_search{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s linear;
+    }
+    .showSearch{
+        opacity: 1;
+        visibility: visible;
+        top: 80px;
+    }
+    .mobileBars{
+        display: inline-block;
+        opacity: 1;
+        visibility: visible;
+    }
+    .cart_section{
+        margin-top: 25px;
+    }
+    .accountImage{
+        height: 23px;
+    }
+    .cart_section ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

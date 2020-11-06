@@ -11,20 +11,20 @@ const Register = (props) => {
     const dispatch = useDispatch();
     const RegisterUser = useSelector(state => state.RegisterReducer)
     // console.log(RegisterUser);
-    // const {loading, regInfo: {name, email, isAdmin}, error, isRegistered} = RegisterUser;
+    const {loading,  error, isRegistered} = RegisterUser;
     // console.log(email, name);
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(RegisterAuth(Username, Useremail, Userpassword))
         console.log("SUBMIT FORM ");
     }
-    // const redirect = props.location.search ? props.location.search.split("=")[1] : '/' ;
+    const redirect = props.location.search ? props.location.search.split("=")[1] : '/login' ;
     // console.log(props.location);
-    // useEffect(()=>{
-    //     if(email){
-    //         props.history.push(redirect);
-    //     }
-    // }, [email])
+    useEffect(()=>{
+        if(isRegistered){
+            props.history.push(redirect);
+        }
+    }, [isRegistered])
 
     
 
@@ -65,9 +65,9 @@ const Register = (props) => {
 
                 <p className="pt-4"><small>Already Have an account?</small></p>
 
-                {/* <div className={`${style.single_form} text-center`}>
+                <div className={`${style.single_form} text-center`}>
                     <Button title="Login" link={redirect === '/' ? 'login' : 'login/redirect='+redirect} />
-                </div> */}
+                </div>
 
 
             </form>

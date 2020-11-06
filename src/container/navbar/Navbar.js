@@ -44,10 +44,10 @@ const Navbar = (props) => {
                                 navItems.map((nav, index) => {
                                     
                                     if(nav.link === "/login" && isAuth === true){
-                                        return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to="/logout" exact={(nav.link==="/").toString()} className="d-block" onClick={(e) => LogoutHandler(e)}> Logout </NavLink></li>
+                                        return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to="/logout" exact={(nav.link==="/")} className="d-block" onClick={(e) => LogoutHandler(e)}> Logout </NavLink></li>
                                     }
 
-                                    return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to={nav.link} exact={(nav.link==="/").toString()} className="d-block active"> {nav.name} </NavLink></li>
+                                    return <li key={index} className="list-inline-item"><NavLink activeStyle={{color: 'green'}} to={nav.link} exact={(nav.link==="/")} className="d-block active"> {nav.name} </NavLink></li>
                                 })
                             }
                             
