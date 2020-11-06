@@ -39,7 +39,7 @@ const HomeSlider = () => {
                             slideItems.map(prod => {
                                 return(
                                     <div className={style.single_slide} key={prod.id}>
-                                        <img src={prod.image} alt=""/>
+                                        <img src={prod.image} alt="" />
                                     </div>
                                 )
                             })
